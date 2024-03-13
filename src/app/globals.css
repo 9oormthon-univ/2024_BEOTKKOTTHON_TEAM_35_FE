@@ -24,10 +24,36 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  font-family: -apple-system, PretendardR, sans-serif;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+@font-face {
+  font-family: "PretendardR";
+  font-weight: 400;
+  src: url("../../public/assets/fonts/PretendardVariable.ttf")
+    format("truetype");
+}
+@font-face {
+  font-family: "PretendardM";
+  font-weight: 500;
+  src: url("../../public/assets/fonts/PretendardVariable.ttf")
+    format("truetype");
+}
+@font-face {
+  font-family: "PretendardSB";
+  font-weight: 600;
+  src: url("../../public/assets/fonts/PretendardVariable.ttf")
+    format("truetype");
+}
+@font-face {
+  font-family: "PretendardB";
+  font-weight: 700;
+  src: url("../../public/assets/fonts/PretendardVariable.ttf")
+    format("truetype");
 }

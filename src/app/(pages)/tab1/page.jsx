@@ -5,7 +5,7 @@ export default function TabOne() {
 
     <div>
       <div class="flex flex-col content-center items-center w-full mb-14">
-        <div class="flex flex-col content-center items-center w-full max-w-screen-md">
+        <div class="flex flex-col content-center items-center w-full max-w-[500px]">
 
           <p>돈버니 Tab1 !!</p>
 

@@ -1,10 +1,11 @@
 import BottomNav from "@/app/_components/bottom_nav";
+import TabsComponent from "@/app/_components/home/TabsComponent";
 
 export default function Home() {
   return (
     <div>
       <div class="flex flex-col content-center items-center w-full mb-14">
-        <div class="flex flex-col content-center items-center w-full max-w-screen-md h-screen">
+        <div class="flex flex-col content-center items-center w-full max-w-[500px] h-screen">
 
           <div class="flex flex-col px-4 items-center w-full py-2 bg-[#4e60ff]">
           {/* <div class="flex flex-col px-4 items-center w-full h-16 bg-[#4e60ff]"> */}
@@ -28,14 +29,28 @@ export default function Home() {
             </div>
 
           </div>
-          돈버니 홈화면 !! /home
+
+          <div class="w-full">
+            <TabsComponent items={items}/>
+          </div>
+
 
         </div>
 
+        <BottomNav />
       </div>
 
-      <BottomNav />
+      
     </div>
 
   );
 }
+
+// 탭 아이템
+const items = [
+  {title: "홈", content: (<div>홈 content</div>)},
+  {title: "장학금", content: (<div>장학금 content</div>)},
+  {title: "청년정책", content: (<div>청년정책 content</div>)},
+  {title: "금융상품", content: (<div>금융상품 content</div>)},
+  {title: "챌린지", content: (<div>챌린지 content</div>)},
+]

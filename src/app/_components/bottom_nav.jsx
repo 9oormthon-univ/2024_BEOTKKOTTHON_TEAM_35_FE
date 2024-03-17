@@ -14,7 +14,7 @@ const BottomNav = () => {
   } = useNavigation();
 
   return (
-    <div class={`flex flex-col justify-center items-center fixed bottom-0 w-full h-14 z-10 bg-zinc-100 dark:bg-zinc-950 border-t dark:border-zinc-800 border-zinc-200 shadow-lg sm:hidden`}>
+    <div class={`flex flex-col justify-center items-center fixed bottom-0 w-full max-w-[500px] h-14 z-10 bg-zinc-100 dark:bg-zinc-950 border-t dark:border-zinc-800 border-zinc-200 shadow-lg`}>
 
       <div class="flex flex-row justify-around items-center bg-transparent w-full">
 

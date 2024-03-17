@@ -5,8 +5,7 @@ export default function Home() {
   return (
     <div>
       <div class="flex flex-col content-center items-center w-full mb-14">
-        <div class="flex flex-col content-center items-center w-full max-w-[390px] h-screen">
-          {/* { max width 피그마 기준 390픽셀로 수정 ! } */}
+        <div class="flex flex-col content-center items-center w-full max-w-[500px] h-screen">
 
           <div class="flex flex-col px-4 items-center w-full py-2 bg-[#4e60ff]">
           {/* <div class="flex flex-col px-4 items-center w-full h-16 bg-[#4e60ff]"> */}

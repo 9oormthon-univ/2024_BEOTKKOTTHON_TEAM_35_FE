@@ -13,9 +13,11 @@ const InputBox = ({ value, setValue, placeholder, validate, max, type }) => {
   };
 
   return (
-    <div className="relative">
+    <div className="w-full relative">
       <input
-        className="w-full h-[54px] px-[24px] py-[16px] rounded-xl border border-[#C9CDD2] text-[#020D19] placeholder:text-[#9EA4AA] focus:outline-none focus:border-[#4E60FF]"
+        className={`w-full h-[54px] px-[24px] py-[16px] rounded-xl border focus:border-[#4E60FF] border-${
+          value && validate ? "[#4E60FF]" : "[#C9CDD2]"
+        } text-[#020D19] placeholder:text-[#9EA4AA] focus:outline-none`}
         placeholder={placeholder}
         value={value}
         onChange={handleChange}

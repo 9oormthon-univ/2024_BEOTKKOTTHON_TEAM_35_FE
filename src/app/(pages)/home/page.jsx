@@ -1,41 +1,22 @@
+import Header from "@/app/_components/home/Header";
 import BottomNav from "@/app/_components/bottom_nav";
+import HomeTab from "./home";
+import Tab1 from "./tab1";
+import Tab2 from "./tab2";
+import Tab3 from "./tab3";
+import Tab4 from "./tab4";
 import TabsComponent from "@/app/_components/home/TabsComponent";
 
 export default function Home() {
   return (
-    <div>
-      <div class="flex flex-col content-center items-center w-full mb-14">
-        <div class="flex flex-col content-center items-center w-full max-w-[500px] h-screen">
+    <div class="flex flex-col items-center">
+      <div class="w-full max-w-[500px] pb-14">
+        
+        <Header />
 
-          <div class="flex flex-col px-4 items-center w-full py-2 bg-[#4e60ff]">
-          {/* <div class="flex flex-col px-4 items-center w-full h-16 bg-[#4e60ff]"> */}
-            <div class="flex justify-between w-full">
-              <div>
-                <p class="text-white text-xl font-bold">돈버니</p>
-              </div>
+        {/* <TabsComponent items={items}/> */}
 
-              <div>
-                <span>icon 1</span>
-                <span>icon 2</span>
-              </div>
-            </div>
-
-
-            <div class="group w-full">
-              <div class="relative flex items-center">
-                <input id="5" type="text" class="peer relative h-10 w-full rounded-md bg-gray-50 pl-4 pr-10 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:bg-white focus:ring-2 focus:ring-blue-400 focus:drop-shadow-lg" />
-                <span class="material-symbols-outlined absolute right-2 transition-all duration-200 ease-in-out group-focus-within:text-blue-400">icon</span>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="w-full">
-            <TabsComponent items={items}/>
-          </div>
-
-
-        </div>
+        <HomeTab />
 
         <BottomNav />
       </div>
@@ -48,9 +29,8 @@ export default function Home() {
 
 // 탭 아이템
 const items = [
-  {title: "홈", content: (<div>홈 content</div>)},
-  {title: "장학금", content: (<div>장학금 content</div>)},
-  {title: "청년정책", content: (<div>청년정책 content</div>)},
-  {title: "금융상품", content: (<div>금융상품 content</div>)},
-  {title: "챌린지", content: (<div>챌린지 content</div>)},
+  {title: "장학금", content: (<Tab1 />)},
+  {title: "청년정책", content: (<Tab2 />)},
+  {title: "금융상품", content: (<Tab3 />)},
+  {title: "챌린지", content: (<Tab4 />)},
 ]

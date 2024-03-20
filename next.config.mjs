@@ -11,4 +11,12 @@ const withPWA = withPWAInit({
 
 export default withPWA({
   // Your Next.js config
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+
+    return config;
+  },
 });

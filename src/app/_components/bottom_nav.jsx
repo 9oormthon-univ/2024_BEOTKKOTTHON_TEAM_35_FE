@@ -14,7 +14,7 @@ const BottomNav = () => {
   } = useNavigation();
 
   return (
-    <div class={`flex flex-col justify-center items-center fixed bottom-0 w-full max-w-[500px] h-14 z-10 bg-zinc-100 dark:bg-zinc-950 border-t dark:border-zinc-800 border-zinc-200 shadow-lg`}>
+    <div class={`flex flex-col justify-center items-center fixed bottom-0 w-full max-w-[500px] h-14 z-10 bg-[#FCFCFF] shadow-lg drop-shadow-md rounded-t-[20px]`}>
 
       <div class="flex flex-row justify-around items-center bg-transparent w-full">
 
@@ -22,7 +22,7 @@ const BottomNav = () => {
           <span class="font-bold">Home</span>
         ) : (
           <Link href="/home" class="flex items-center relative">
-            <span>Home</span>
+            <span>홈</span>
           </Link>
         )}
 
@@ -30,7 +30,7 @@ const BottomNav = () => {
           <span class="font-bold">Tab1</span>
         ) : (
         <Link href="/tab1" class="flex items-center">
-          <span>Tab1</span>
+          <span>퀴즈</span>
         </Link>
         )}
 
@@ -38,7 +38,7 @@ const BottomNav = () => {
           <span class="font-bold">Tab2</span>
         ) : (
         <Link href="/tab2" class="flex items-center">
-          <span>Tab2</span>
+          <span>탐색</span>
         </Link>
         )}
 
@@ -46,7 +46,7 @@ const BottomNav = () => {
           <span class="font-bold">MyPage</span>
         ) : (
         <Link href="/mypage" class="flex items-center">
-          <span>MyPage</span>
+          <span>My</span>
         </Link>
         )}
 

@@ -1,7 +1,15 @@
-const ProgressBar = () => {
+const ProgressBar = ({ num }) => {
+  const progress = ((num - 1) / 9) * 90 + 10;
+
   return (
-    <div className="w-full h-[5px] rounded-xl bg-[#2528AE]">
-      <div className="w-[200px] h-[5px] rounded-xl bg-[#ECF3FF]" />
+    <div
+      style={{ width: `100%` }}
+      className="relative h-[5px] rounded-xl bg-[#2528AE]"
+    >
+      <div
+        style={{ width: `${progress}%` }}
+        className="absolute h-[5px] rounded-xl bg-[#ECF3FF]"
+      />
     </div>
   );
 };

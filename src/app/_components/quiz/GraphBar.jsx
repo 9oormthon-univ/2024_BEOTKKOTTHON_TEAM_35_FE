@@ -2,17 +2,26 @@ import React from "react";
 
 const GraphBar = ({ text, num }) => {
   // num 값 비율 계산
-  const rate = `${(num / 80) * 60}%`;
+  const progress = (num / 100) * 100;
 
   return (
-    <div className="flex items-center">
-      <div className="mr-[19px] text-[14px] text-[#72787F] font-normal">
+    <div className="w-full flex items-center">
+      <div className="w-[80px] text-[14px] text-[#161750] font-normal">
         {text}
       </div>
-      <div
-        style={{ width: rate }}
-        className="h-[16px] bg-gradient-to-r from-[#4e60ff] to-[#2A2BD8] rounded-r-xl"
-      />
+
+      <div className="w-full">
+        <div className="mb-[2px] text-[#72787F] text-[11px]">{num}%</div>
+        <div
+          style={{ width: `100%` }}
+          className="relative h-[8px] bg-[#E8EBED] rounded-r-xl"
+        >
+          <div
+            style={{ width: `${progress}%` }}
+            className="absolute h-[8px] bg-gradient-to-r from-[#758DFF] to-[#2A2BD8] rounded-xl"
+          />
+        </div>
+      </div>
     </div>
   );
 };

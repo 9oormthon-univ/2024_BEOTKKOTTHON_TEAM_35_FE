@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import { useState } from "react";
 
 import StageBox from "@/app/_components/quiz/StageBox";
 import LockStageBox from "@/app/_components/quiz/LockStageBox";
@@ -11,6 +12,8 @@ import ToggleButton from "@/app/_components/common/ToggleButton";
 export default function QuizReviewStage() {
   const params = useSearchParams();
   const title = params.get("title");
+
+  const [toggle, setToggle] = useState(true);
 
   return (
     <div className="flex flex-col content-center items-center w-full h-full">
@@ -33,9 +36,9 @@ export default function QuizReviewStage() {
           {title}
         </div>
         <div className="flex w-full mt-[17px] px-4 justify-between items-center">
-          <div className="text-[16px]">오답만 풀기</div>
+          <div className="text-[16px] text-[#454C53]">오답만 풀기</div>
           <div>
-            <ToggleButton />
+            <ToggleButton status={toggle} />
           </div>
         </div>
         <div className="mt-[30px] flex flex-col gap-[12px] w-full px-4">

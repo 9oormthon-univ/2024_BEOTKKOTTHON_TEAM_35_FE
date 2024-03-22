@@ -2,9 +2,10 @@
 
 import View from '../../(pages)/home/images/card_two_view.svg';
 import Bookmark from '../../(pages)/home/images/card_two_bookmark.svg';
-import More from '../../(pages)/home/images/card_two_more.svg';
+import BookmarkBtn from '../../(pages)/home/images/bookmark_tab_on.svg';
 
-const RecommendCardTwo = ({ data }) => {
+// 북마크 탭, 탐색 탭 카드
+const RecommendCardThree = ({ data }) => {
     return (
         <div class="flex flex-row justify-between min-w-[358px] h-[134px] border-[0.5px] border-[#ECF3FF] rounded-lg drop-shadow-sm">
             <div class="flex flex-col">
@@ -35,11 +36,11 @@ const RecommendCardTwo = ({ data }) => {
                 </div>
             </div>
 
-            <div class="flex flex-col justify-center pr-4">
-                <More/>
+            <div class="flex flex-col pt-4 pr-4">
+                <BookmarkBtn />
             </div>
         </div>
     );
 };
 
-export default RecommendCardTwo;
+export default RecommendCardThree;

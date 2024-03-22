@@ -29,7 +29,10 @@ const TabsComponent = ({ items }) => {
       {/* 탭 본문 */}
       <div>
         {items.map((item, index) => (
-          <div className={`${selectedTab === index ? "" : "hidden"}`}>
+          <div
+            key={index}
+            className={`${selectedTab === index ? "" : "hidden"}`}
+          >
             {item.content}
           </div>
         ))}

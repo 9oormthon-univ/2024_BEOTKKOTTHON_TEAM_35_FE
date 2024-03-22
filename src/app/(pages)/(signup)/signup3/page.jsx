@@ -41,9 +41,17 @@ export default function SignUp3() {
           <InputBox
             value={name}
             setValue={setName}
-            placeholder="닉네임(최대 5글자)"
+            placeholder="닉네임(2-5글자)"
+            validate={validateName(name)}
             max={5}
           />
+          {name && !validateName(name) && (
+            <div>
+              <div className="w-full pt-[8px] text-[#FF4B4B] text-[11px]">
+                한글 닉네임만 가능해요. (2-5자)
+              </div>
+            </div>
+          )}
         </div>
         <div className="w-full px-4 mb-[34px]">
           {validateName(name) ? (

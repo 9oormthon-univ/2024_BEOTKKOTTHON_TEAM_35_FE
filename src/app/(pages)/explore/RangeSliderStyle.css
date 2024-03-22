@@ -1,0 +1,14 @@
+#ageRange {
+    height: 5px;
+}
+
+#ageRange .range-slider__range {
+    background: #4E60FF;
+}
+
+#ageRange .range-slider__thumb {
+    width: 22px;
+    height: 22px;
+    background: #4E60FF;
+    border: solid;
+}

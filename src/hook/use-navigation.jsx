@@ -7,27 +7,27 @@ import { usePathname } from 'next/navigation';
 const useNavigation = () => {
   const pathname = usePathname();
   const [isHomeActive, setIsHomeActive] = useState(false);
-  const [isTab1Active, setIsTab1Active] = useState(false);
-  const [isTab2Active, setIsTab2Active] = useState(false);
+  const [isExploreActive, setIsExploreActive] = useState(false);
+  const [isQuizActive, setIsQuizActive] = useState(false);
   const [isMyPageActive, setIsMyPageActive] = useState(false);
 
   useEffect(() => {
     setIsHomeActive(false);
-    setIsTab1Active(false);
-    setIsTab2Active(false);
+    setIsExploreActive(false);
+    setIsQuizActive(false);
     setIsMyPageActive(false);
 
     switch (pathname) {
       case '/home':
         setIsHomeActive(true);
         break;
-      case '/tab1':
-        setIsTab1Active(true);
+      case '/explore':
+        setIsExploreActive(true);
         break;
-      case '/home':
-        setIsTab2Active(true);
+      case '/quiz':
+        setIsQuizActive(true);
         break;
-      case '/tab1':
+      case '/mypage':
         setIsMyPageActive(true);
         break;
       default:
@@ -38,8 +38,8 @@ const useNavigation = () => {
 
   return {
     isHomeActive,
-    isTab1Active,
-    isTab2Active,
+    isExploreActive,
+    isQuizActive,
     isMyPageActive,
   };
 };

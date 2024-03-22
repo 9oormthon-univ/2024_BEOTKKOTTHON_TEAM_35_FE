@@ -20,7 +20,9 @@ export default function Login() {
             />
           </div>
           <div className="absolute bottom-0 grid px-4 w-full gap-3.5 mb-14">
-            <KakaoButton />
+            <Link href="/home">
+              <KakaoButton />
+            </Link>
             <Link href="/login">
               <BorderButton text="이메일 로그인" />
             </Link>

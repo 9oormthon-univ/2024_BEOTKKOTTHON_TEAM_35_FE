@@ -10,7 +10,7 @@ const BottomNav = () => {
 
   return (
     <div
-      class={`flex flex-col justify-center items-center fixed bottom-0 w-full max-w-[500px] h-14 z-10 bg-[#FCFCFF] shadow-lg drop-shadow-md rounded-t-[20px]`}
+      class={`flex flex-col justify-center items-center fixed bottom-0 w-full max-w-[500px] h-[80px] z-10 bg-[#FCFCFF] shadow-[0_0px_10px_0px_rgba(0,0,0,0.2)] drop-shadow-md rounded-t-[20px]`}
     >
       <div class="flex flex-row justify-around items-center bg-transparent w-full">
         {isHomeActive ? (

@@ -1,10 +1,23 @@
+"use client";
 
 import Image from 'next/image';
 
 import RecommendCardOne from '@/app/_components/common/RecommendCardOne';
 import RecommendCardTwo from '@/app/_components/common/RecommendCardTwo';
+import { useState } from "react";
 
 export default function Tab1() {
+    const [q1, setQ1] = useState(false);
+    const [q2, setQ2] = useState(false);
+    const [q3, setQ3] = useState(false);
+
+    const quiz = {
+        question: "야식으로 뭐 먹을가요?",
+        wrongAnswer1: "연 3.0%",
+        wrongAnswer2: "연 3.25%",
+        correctAnswer: "연 3.5%",
+      };
+
     return (
         <div>
 
@@ -27,7 +40,10 @@ export default function Tab1() {
 
                         <div class="flex w-full pt-[43px] z-40 overflow-clip">
                             <div class="flex flex-col w-full">
-                                <div class="flex justify-between items-center mx-3 h-9 bg-[#F7F8F9] rounded-lg">
+
+                                <div onClick={() => {
+                                    setQ1(true);
+                                }} class="flex justify-between items-center mx-3 h-9 bg-[#F7F8F9] rounded-lg">
                                     <span class="ml-[15px]">연 3.0%</span>
                                     <Image
                                         src="/assets/images/b/home/images/icon_choose.svg"
@@ -38,7 +54,9 @@ export default function Tab1() {
                                     />
                                 </div>
 
-                                <div class="flex justify-between items-center mx-3 mt-1.5 h-9 bg-[#F7F8F9] rounded-lg">
+                                <div onClick={() => {
+                                    setQ2(true);
+                                }} class="flex justify-between items-center mx-3 mt-1.5 h-9 bg-[#F7F8F9] rounded-lg">
                                     <span class="ml-[15px]">연 3.25%</span>
                                     <Image
                                         src="/assets/images/b/home/images/icon_choose.svg"
@@ -49,7 +67,9 @@ export default function Tab1() {
                                     />
                                </div>
 
-                                <div class="flex justify-between items-center mx-3 mt-1.5 mb-3 h-9 bg-[#F7F8F9] rounded-lg">
+                                <div onClick={() => {
+                                    setQ3(true);
+                                }} class="flex justify-between items-center mx-3 mt-1.5 mb-3 h-9 bg-[#F7F8F9] rounded-lg">
                                     <span class="ml-[15px]">연 3.5%</span>
                                     <Image
                                         src="/assets/images/b/home/images/icon_choose.svg"
@@ -60,15 +80,7 @@ export default function Tab1() {
                                     />
                                 </div>
                             </div>
-                            <div class="relative w-[30%] ">
-                                <Image
-                                    src="/assets/images/b/home/images/bunny_char_2.svg"
-                                    width={111}
-                                    height={108}
-                                    class="w-full overflow-visible z-0 absolute bottom-0 right-7"
-                                    alt="bunny"
-                                />
-                            </div>
+                            
                         </div>
                     </div>
                 </div>

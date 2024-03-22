@@ -108,8 +108,8 @@ export default function QuizID() {
     <div>
       <div className="flex flex-col content-center items-center w-full h-full">
         <div className="flex flex-col content-center items-center w-full max-w-[500px] h-screen bg-[#4E60FF]">
-          <div className="fixed w-full bg-[#4E60FF]">
-            <div className="mt-[28px] flex w-full justify-between items-center h-[36px] px-4">
+          <div className="fixed w-full max-w-[500px]  bg-[#4E60FF]">
+            <div className="mt-[6px] flex w-full justify-between items-center h-[36px] px-4">
               {currentQuizIndex > 0 ? (
                 <Image
                   src="/assets/icons/back-arrow-white.svg"
@@ -133,10 +133,10 @@ export default function QuizID() {
               />
             </div>
           </div>
-          <div className="w-full mt-[99px] px-4">
+          <div className="w-full mt-[75px] px-4">
             <ProgressBar num={questions[currentQuizIndex].num} />
           </div>
-          <div className="w-full mt-[25px]">
+          <div className="w-full max-w-[500px] mt-[25px]">
             <QuizCard
               index={currentQuizIndex}
               questions={questions}

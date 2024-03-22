@@ -8,7 +8,7 @@ const TabsComponent = ({ items }) => {
   return (
     <div>
       {/* 탭 헤더 */}
-      <div className="fixed w-full px-4 bg-[#FCFCFF]">
+      <div className="max-w-[500px] z-10 fixed w-full px-4 bg-[#FCFCFF]">
         <div class="inblock flex justify-center items-center h-[40px] w-full bg-[#FCFCFF]">
           {items.map((item, index) => (
             <div

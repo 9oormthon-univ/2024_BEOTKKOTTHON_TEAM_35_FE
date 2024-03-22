@@ -2,12 +2,24 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { Suspense } from "react"; // Suspense 추가
 import { useSearchParams } from "next/navigation";
+import { useState } from "react";
 
 import StageBox from "@/app/_components/quiz/StageBox";
 import LockStageBox from "@/app/_components/quiz/LockStageBox";
 
 export default function QuizStage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      {" "}
+      {/* Suspense 추가 */}
+      <QuizStageContent />
+    </Suspense>
+  );
+}
+
+function QuizStageContent() {
   const params = useSearchParams();
   const title = params.get("title");
 

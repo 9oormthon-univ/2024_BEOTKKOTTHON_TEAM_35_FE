@@ -1,6 +1,20 @@
+import localFont from 'next/font/local'
+
+import Link from 'next/link';
 import Alarm from '../../(pages)/home/images/alarm.svg';
 import Bookmark from '../../(pages)/home/images/bookmark_off.svg';
 import Search from '../../(pages)/home/images/search.svg';
+
+
+const JalnanFont = localFont({
+  src: [
+    {
+      path: "../../../fonts/JalnanGothic.otf",
+      weight: "normal",
+      style: "normal",
+    },
+  ],
+})
 
 export default function Header() {
     return(
@@ -10,13 +24,18 @@ export default function Header() {
           {/* <div class="flex flex-col px-4 items-center w-full h-16 bg-[#4e60ff]"> */}
             <div class="flex justify-between w-full">
               <div>
-                <p class="mt-3 text-[#4E60FF] text-2xl font-bold">돈버니</p>
+                <p class={`${JalnanFont.className} mt-3 text-[#4E60FF] text-2xl font-bold`}>돈버니</p>
                 {/* Jalnan Gothic 폰트 적용 필요 */}
               </div>
 
               <div class="flex items-center mt-3 gap-x-[15px]">
-                <Bookmark />
-                <Alarm />
+                <Link href="/home/bookmark">
+                  <Bookmark />
+                </Link>
+                
+                <Link href="/home/notification">
+                  <Alarm />
+                </Link>
               </div>
             </div>
 

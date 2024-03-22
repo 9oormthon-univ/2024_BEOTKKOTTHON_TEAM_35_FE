@@ -1,8 +1,6 @@
 "use client";
 
-import View from '../../(pages)/home/images/card_two_view.svg';
-import Bookmark from '../../(pages)/home/images/card_two_bookmark.svg';
-import BookmarkBtn from '../../(pages)/home/images/bookmark_tab_on.svg';
+import Image from 'next/image';
 
 // 북마크 탭, 탐색 탭 카드
 const RecommendCardThree = ({ data }) => {
@@ -29,15 +27,32 @@ const RecommendCardThree = ({ data }) => {
                 </div>
 
                 <div class="flex items-center ml-4 mt-[11px]">
-                    <View />
+                    <Image
+                        src="/assets/images/b/home/images/card_two_view.svg"
+                        width={16}
+                        height={16}
+                        alt="view"
+                    />
                     <span class="text-xs text-[#C9CDD2] ml-1.5">{data.view ? data.view : "0"}</span>
-                    <Bookmark class="ml-2.5" />
+                    <Image
+                        src="/assets/images/b/home/images/card_two_bookmark.svg"
+                        width={12}
+                        height={12}
+                        class="ml-2.5"
+                        alt="bookmark"
+                    />
                     <span class="text-xs text-[#C9CDD2] ml-1.5">{data.bookmark ? data.bookmark : "0"}</span>
                 </div>
             </div>
 
             <div class="flex flex-col pt-4 pr-4">
-                <BookmarkBtn />
+                <Image
+                    src="/assets/images/b/home/images/bookmark_tab_on.svg"
+                    width={14}
+                    height={16}
+                    class="ml-2.5"
+                    alt="bookmark_tab_on"
+                />
             </div>
         </div>
     );

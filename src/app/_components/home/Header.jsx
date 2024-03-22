@@ -1,10 +1,7 @@
 import localFont from 'next/font/local'
 
 import Link from 'next/link';
-import Alarm from '../../(pages)/home/images/alarm.svg';
-import Bookmark from '../../(pages)/home/images/bookmark_off.svg';
-import Search from '../../(pages)/home/images/search.svg';
-
+import Image from 'next/image';
 
 const JalnanFont = localFont({
   src: [
@@ -30,11 +27,22 @@ export default function Header() {
 
               <div class="flex items-center mt-3 gap-x-[15px]">
                 <Link href="/home/bookmark">
-                  <Bookmark />
+                  <Image
+                    src="/assets/images/b/home/images/bookmark_off.svg"
+                    width={20}
+                    height={20}
+                    alt="bookmark"
+                  />
                 </Link>
                 
                 <Link href="/home/notification">
-                  <Alarm />
+                <Image
+                  src="/assets/images/b/home/images/alarm.svg"
+                  width={20}
+                  height={20}
+                  alt="Alarm"
+                />
+
                 </Link>
               </div>
             </div>
@@ -48,7 +56,12 @@ export default function Header() {
                     class="peer relative h-10 w-full text-sm rounded-md bg-gray-50 pl-4 pr-10 outline-none drop-shadow-sm transition-all duration-200 ease-in-out" 
                 />
                 <span class="material-symbols-outlined absolute right-2 transition-all duration-200 ease-in-out">
-                  <Search />
+                  <Image
+                    src="/assets/images/b/home/images/search.svg"
+                    width={20}
+                    height={20}
+                    alt="Search"
+                  />
                 </span>
               </div>
             </div>

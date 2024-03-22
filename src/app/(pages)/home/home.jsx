@@ -1,14 +1,6 @@
-// import LightBulb from '../../../../public/assets/images/lightbulb.svg';
-// import IconChoose from '../../../../public/assets/images/icon_choose.svg';
-// import BunnyChar2 from '../../../../public/assets/images/bunny_char_2.svg';
 
-import LightBulb from './images/lightbulb.svg';
-import Bell from './images/bell.svg';
-import Clock from './images/clock.svg';
-import Fire from './images/fire.svg';
-import IconChoose from './images/icon_choose.svg';
-import BunnyChar2 from './images/bunny_char_2.svg';
-import HomeBanner from './images/home_banner.svg';
+import Image from 'next/image';
+
 import RecommendCardOne from '@/app/_components/common/RecommendCardOne';
 import RecommendCardTwo from '@/app/_components/common/RecommendCardTwo';
 
@@ -19,7 +11,14 @@ export default function Tab1() {
             <div class="flex flex-col">
                 <div class="flex flex-col px-4 mt-[17px]">
                     <div class="flex items-center">
-                        <span><LightBulb /></span>
+                        <span>
+                        <Image
+                            src="/assets/images/b/home/images/lightbulb.svg"
+                            width={24}
+                            height={24}
+                            alt="bulb"
+                        />
+                    </span>
                         <span class="text-lg font-bold ml-2">오늘의 금융 퀴즈</span>
                     </div>
 
@@ -30,33 +29,68 @@ export default function Tab1() {
                             <div class="flex flex-col w-full">
                                 <div class="flex justify-between items-center mx-3 h-9 bg-[#F7F8F9] rounded-lg">
                                     <span class="ml-[15px]">연 3.0%</span>
-                                    <IconChoose class="mr-[9px]" />
+                                    <Image
+                                        src="/assets/images/b/home/images/icon_choose.svg"
+                                        width={16}
+                                        height={16}
+                                        class="mr-[9px]"
+                                        alt="choose"
+                                    />
                                 </div>
 
                                 <div class="flex justify-between items-center mx-3 mt-1.5 h-9 bg-[#F7F8F9] rounded-lg">
                                     <span class="ml-[15px]">연 3.25%</span>
-                                    <IconChoose class="mr-[9px]" />
+                                    <Image
+                                        src="/assets/images/b/home/images/icon_choose.svg"
+                                        width={16}
+                                        height={16}
+                                        class="mr-[9px]"
+                                        alt="choose"
+                                    />
                                </div>
 
                                 <div class="flex justify-between items-center mx-3 mt-1.5 mb-3 h-9 bg-[#F7F8F9] rounded-lg">
                                     <span class="ml-[15px]">연 3.5%</span>
-                                    <IconChoose class="mr-[9px]" />
+                                    <Image
+                                        src="/assets/images/b/home/images/icon_choose.svg"
+                                        width={16}
+                                        height={16}
+                                        class="mr-[9px]"
+                                        alt="choose"
+                                    />
                                 </div>
                             </div>
                             <div class="relative w-[30%] ">
-                                <BunnyChar2 class="w-full overflow-visible z-0 absolute bottom-0 right-7"/>
+                                <Image
+                                    src="/assets/images/b/home/images/bunny_char_2.svg"
+                                    width={111}
+                                    height={108}
+                                    class="w-full overflow-visible z-0 absolute bottom-0 right-7"
+                                    alt="bunny"
+                                />
                             </div>
                         </div>
                     </div>
                 </div>
 
-
-                <HomeBanner class="w-full mt-10 aspect-[39/10]"/>
-                
+                <Image
+                    src="/assets/images/b/home/images/home_banner.svg"
+                    width={390}
+                    height={100}
+                    class="w-full mt-10 aspect-[39/10]"
+                    alt="banner"
+                />
 
                 <div class="flex flex-col px-4 mt-9">
                     <div class="flex items-center">
-                        <span><Bell /></span>
+                        <span>
+                        <Image
+                            src="/assets/images/b/home/images/bell.svg"
+                            width={24}
+                            height={24}
+                            alt="bell"
+                        />
+                        </span>
                         <span class="text-lg font-bold ml-2">금융 상품 추천</span>
                     </div>
 
@@ -93,7 +127,14 @@ export default function Tab1() {
                     
 
                     <div class="flex items-center mt-[29px]">
-                        <span><Clock /></span>
+                        <span>
+                        <Image
+                            src="/assets/images/b/home/images/clock.svg"
+                            width={24}
+                            height={24}
+                            alt="clock"
+                        />
+                        </span>
                         <span class="text-lg font-bold ml-2">곧 모집 마감! 장학금 추천</span>
                     </div>
 
@@ -124,12 +165,22 @@ export default function Tab1() {
                         />
                     </div>
 
+                </div>
 
-                    {/* 섹션 나누기 바 추가 부분 */}
 
+                {/* 섹션 나누기 바 추가 부분 */}
+                <div class="w-100vw h-2 bg-[#F7F8F9]"></div>
 
+                <div class="flex flex-col px-4 mt-9">
                     <div class="flex items-center mt-[26px]">
-                        <span><Fire /></span>
+                        <span>
+                        <Image
+                            src="/assets/images/b/home/images/fire.svg"
+                            width={24}
+                            height={24}
+                            alt="fire"
+                        />
+                        </span>
                         <span class="text-lg font-bold ml-2">지금 핫한 청년 정책</span>
                     </div>
 

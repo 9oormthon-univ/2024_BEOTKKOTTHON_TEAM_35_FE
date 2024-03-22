@@ -14,7 +14,7 @@ const GraphBar = ({ text, num }) => {
         <div className="mb-[2px] text-[#72787F] text-[11px]">{num}%</div>
         <div
           style={{ width: `100%` }}
-          className="relative h-[8px] bg-[#E8EBED] rounded-r-xl"
+          className="z-0 relative h-[8px] bg-[#E8EBED] rounded-r-xl"
         >
           <div
             style={{ width: `${progress}%` }}

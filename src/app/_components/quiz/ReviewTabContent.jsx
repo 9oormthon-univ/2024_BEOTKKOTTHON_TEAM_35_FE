@@ -11,7 +11,7 @@ const ReviewTabContent = () => {
   };
 
   return (
-    <div className="mt-[20px] mb-[50px] flex flex-col items-start w-full h-full">
+    <div className="mt-[20px] mb-[50px] flex flex-col items-start w-full h-full pb-14">
       <div className="mt-[39px] w-full bg-[#ECF3FF] shadow-md px-[16px] py-[18px]">
         <div className="text-[22px] text-[#4E60FF] font-bold mb-[17px]">
           오늘의 오답노트

@@ -49,14 +49,14 @@ const QuizCard = ({ index, questions, next, open }) => {
   };
 
   return (
-    <div className="w-full flex flex-col">
+    <div className="w-full max-w-[500px] flex flex-col">
       <div className="bg-[#4E60FF] px-4">
         <div className="mb-[5px] text-[#FCFCFF] text-[22px] font-bold">Q.</div>
         <div className="mb-[28px] text-[18px] text-[#FCFCFF] font-bold">
           {questions[index].question}
         </div>
       </div>
-      <div>
+      <div className="w-full max-w-[500px]">
         <div className="z-0 absolute right-0 mt-[50px] mr-[10px]">
           <Image
             src={`/assets/images/main-character.svg`}
@@ -65,7 +65,7 @@ const QuizCard = ({ index, questions, next, open }) => {
             alt="character"
           />
         </div>
-        <div className="z-1 absolute bottom-0 w-full h-[430px] flex flex-col justify-between bottom-0 bg-[#FFF] rounded-t-2xl px-4">
+        <div className="z-1 absolute bottom-0 w-full max-w-[500px] h-[430px] flex flex-col justify-between bottom-0 bg-[#FFF] rounded-t-2xl px-4">
           {answerStatus == "correct" ? (
             <div className="px-[6px] py-[3px] rounded-[8px] absolute mt-[35px] bg-[#ECF3FF] text-[#2528AE]">
               정답
@@ -77,7 +77,7 @@ const QuizCard = ({ index, questions, next, open }) => {
           ) : (
             ""
           )}
-          <div className="mt-[90px] grid gap-[8px]">
+          <div className="w-full max-w-[500px] mt-[90px] grid gap-[8px]">
             <WrongAnswerButton
               value={selectedValue === questions[index].wrongAnswer1}
               onClick={() => handleClick(questions[index].wrongAnswer1)}
@@ -104,7 +104,7 @@ const QuizCard = ({ index, questions, next, open }) => {
               blockClick={blockClick}
             />
           </div>
-          <div className="mb-[50px]">
+          <div className=" w-full max-w-[500px] mb-[50px]">
             {index == 9 ? (
               <Button text="완료" onClick={open} />
             ) : showNextButton ? (

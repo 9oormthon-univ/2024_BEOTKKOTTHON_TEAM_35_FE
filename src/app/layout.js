@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import RecoilRootWrapper from "./RecoilRoot";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,7 +36,11 @@ export default function RootLayout({ children }) {
       <head>
         <meta name="theme-color" content="#ffffff" />
       </head>
-      <body>{children}</body>
+      <body>
+        <RecoilRootWrapper>
+          {children}
+        </RecoilRootWrapper>
+      </body>
     </html>
   );
 }

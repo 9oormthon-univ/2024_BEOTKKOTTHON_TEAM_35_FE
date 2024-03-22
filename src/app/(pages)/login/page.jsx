@@ -13,6 +13,7 @@ export default function Login() {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   const [autoLogin, setAutoLogin] = useState(false);
+  const [noID, setNoID] = useState(false);
 
   const validateId = (id) => {
     // 이메일 정규식 확인
@@ -23,7 +24,10 @@ export default function Login() {
 
   const validatePassword = (password) => {
     // 비밀번호 길이 확인
-    return password.length >= 8 && password.length <= 16;
+    const lengthCheck = password.length >= 8 && password.length <= 16;
+    // 영어와 숫자 혼합 확인
+    const alphanumericCheck = /[a-zA-Z]/.test(password) && /\d/.test(password);
+    return lengthCheck && alphanumericCheck;
   };
 
   const clickAutoLogin = () => {
@@ -35,7 +39,8 @@ export default function Login() {
       console.log("ID:", id);
       console.log("Password:", password);
     } else {
-      console.error("아이디/ 비밀번호가 일치하지 않습니다.");
+      setNoID(true);
+      console.error("존재하지 않는 아이디 입니다.");
     }
   };
 
@@ -56,43 +61,52 @@ export default function Login() {
           로그인
         </div>
         <div className="flex flex-col px-4 items-start w-full h-full">
-          <div className="grid w-full gap-3">
-            <InputBox
-              value={id}
-              setValue={setId}
-              placeholder="아이디(이메일)"
-              max={25}
-              validate={validateId(id)}
-            />
-            <InputBox
-              value={password}
-              setValue={setPassword}
-              placeholder="비밀번호"
-              type="password"
-              max={16}
-              validate={validatePassword(password)}
-            />
-            <div className="flex items-center w-fit" onClick={clickAutoLogin}>
-              <Image
-                src={
-                  autoLogin
-                    ? "/assets/icons/check-circle.svg"
-                    : "/assets/icons/check-circle-disable.svg"
-                }
-                width={20}
-                height={20}
-                alt="check"
+          <div className="w-full">
+            <div className="grid w-full gap-3">
+              <InputBox
+                value={id}
+                setValue={setId}
+                placeholder="아이디(이메일)"
+                max={25}
+                validate={validateId(id)}
               />
-              <p
-                className={`ml-[9px] text-sm font-normal ${
-                  autoLogin ? "text-[#4e60ff]" : "text-[#9EA4AA]"
-                }`}
-              >
-                자동로그인
-              </p>
+              <InputBox
+                value={password}
+                setValue={setPassword}
+                placeholder="비밀번호"
+                type="password"
+                max={16}
+                validate={validatePassword(password)}
+              />
+            </div>
+            <div className="flex flex-col h-[64px] pt-[8px]">
+              {noID && (
+                <div className="text-[#FF4B4B] text-[11px] mb-[10px] pl-[3px]">
+                  존재하지 않는 아이디 입니다.
+                </div>
+              )}
+              <div className="flex items-center w-fit" onClick={clickAutoLogin}>
+                <Image
+                  src={
+                    autoLogin
+                      ? "/assets/icons/check-circle.svg"
+                      : "/assets/icons/check-circle-disable.svg"
+                  }
+                  width={20}
+                  height={20}
+                  alt="check"
+                />
+                <p
+                  className={`ml-[9px] text-sm font-normal ${
+                    autoLogin ? "text-[#4e60ff]" : "text-[#9EA4AA]"
+                  }`}
+                >
+                  자동로그인
+                </p>
+              </div>
             </div>
           </div>
-          <div className="w-full mt-[33px]">
+          <div className="w-full">
             {validateId(id) && validatePassword(password) ? (
               <Link href="/home">
                 <Button text="로그인" onClick={handleLogin} />

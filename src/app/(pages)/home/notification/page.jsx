@@ -1,7 +1,5 @@
 import NotificationCard from '@/app/_components/common/NotificationCard';
-import Back from '../images/back.svg';
-import Close from '../images/close.svg';
-
+import Image from 'next/image';
 
 export default function Norification() {
   return (
@@ -10,13 +8,23 @@ export default function Norification() {
 
         <div class="flex justify-between h-9 px-4 items-center">
           <a href="javascript:window.history.back();">
-            <Back />
+            <Image
+              src="/assets/images/b/home/images/back.svg"
+              width={24}
+              height={24}
+              alt="Back"
+            />
           </a>
 
           <span>알림</span>
 
           <a href="/home">
-            <Close />
+            <Image
+              src="/assets/images/b/home/images/close.svg"
+              width={20}
+              height={20}
+              alt="Close"
+            />
           </a>
         </div>
 

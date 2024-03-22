@@ -8,12 +8,12 @@ const [selectedTab, setSelectedTab] = useState(0);
     return (
         <div class="w-full">
             {/* 탭 헤더 */}
-            <div class="flex justify-between items-center h-[44px] px-[16px]">
+            <div class="flex justify-between items-center h-[44px] px-[22px]">
                 {items.map((item, index) => (
                     <button
                         key={index}
                         onClick={() => setSelectedTab(index)}
-                        class={`font-bold ${selectedTab === index ? 'text-[#2528AE] underline underline-offset-8' : ''}`}
+                        class={`font-bold ${selectedTab === index ? 'text-[#2528AE] underline underline-offset-[9px]' : ''}`}
                     >
                         {item.title}
                     </button>

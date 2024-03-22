@@ -10,12 +10,12 @@ const CorrectAnswerButton = ({
 }) => {
   return (
     <div
-      className={`flex w-full ${
+      className={`flex w-full shadow-[0_2px_15px_0px_rgba(0,0,0,0.03)] ${
         real ? "h-[54px]" : "h-[36px]"
-      } justify-between items-center px-[15px] py-[9px] rounded-lg ${
+      } justify-between items-center px-[15px] py-[9px] rounded-xl ${
         value || realAnswer == "correct"
           ? "bg-[#ECF3FF] border border-[#4E60FF]"
-          : "bg-[#F7F8F9]"
+          : "bg-[#FCFCFF] border border-[#E8EBED]"
       }`}
       onClick={onClick}
     >

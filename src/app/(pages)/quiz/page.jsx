@@ -34,12 +34,12 @@ export default function Quiz() {
     <div className="w-full max-w-[500px] pb-14">
       <div className="flex flex-col content-center items-center w-full h-full">
         <div className="flex flex-col content-center items-center w-full max-w-[500px] h-screen bg-[#FCFCFF]">
-          <div className="fixed w-full bg-[#FCFCFF]">
-            <div className="mt-[28px] flex flex-col w-full justify-center items-center h-[36px] px-4">
+          <div className="pt-[6px] fixed w-full bg-[#FCFCFF]">
+            <div className="flex flex-col w-full justify-center items-center h-[36px] px-4">
               <div className="text-[16px]">퀴즈</div>
             </div>
           </div>
-          <div className="w-full mt-[44px]">
+          <div className="w-full mt-[22px]">
             <TabsComponent items={items} />
           </div>
           {/* <div className="flex flex-col px-4 items-start w-full h-full">

@@ -10,6 +10,8 @@ const ReviewTabContent = () => {
     setSelectedValue(value);
   };
 
+  const [answer, setAnswer] = useState(false);
+
   return (
     <div className="mt-[20px] mb-[50px] flex flex-col items-start w-full h-full pb-14">
       <div className="mt-[39px] w-full bg-[#ECF3FF] shadow-md px-[16px] py-[18px]">
@@ -24,7 +26,7 @@ const ReviewTabContent = () => {
             현재 우리나라 기준금리는 얼마일까?
           </div>
           <div className="flex w-full">
-            <div className="w-3/4 mb-[2px] grid gap-[6px]">
+            <div className="w-full mb-[2px] grid gap-[6px]">
               <AnswerButton
                 value={selectedValue === "연 3.0%"}
                 onClick={() => handleClick("연 3.0%")}
@@ -39,14 +41,6 @@ const ReviewTabContent = () => {
                 value={selectedValue === "연 3.5%"}
                 onClick={() => handleClick("연 3.5%")}
                 text="연 3.5%"
-              />
-            </div>
-            <div className="pt-[20px] flex justify-end w-1/4">
-              <Image
-                src="/assets/images/main-character.svg"
-                width={150}
-                height={150}
-                alt="character"
               />
             </div>
           </div>

@@ -120,9 +120,8 @@ export default function Tab1() {
 
                 {
                     card_data.map((data, index) => (
-                        <Link href={`./explore/detail/${index}`}>
+                        <Link key={index} href={`./explore/detail/${index}`}>
                             <RecommendCardThree
-                                key={index}
                                 data={data}
                             />
                         </Link>

@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import RangeSlider from 'react-range-slider-input';
+import 'react-range-slider-input/dist/style.css';
+import "./RangeSliderStyle.css";
 
-import FilterDown from '../../(pages)/explore/images/explore_filter_down.svg';
-import FilterUp from '../../(pages)/explore/images/explore_filter_up.svg';
 import SelectLocation from "@/app/_components/common/Explore/SelectLocation";
 import SelectAcademic from "@/app/_components/common/Explore/SelectAcademic";
 import RecommendCardFour from "@/app/_components/common/RecommendCardFour";

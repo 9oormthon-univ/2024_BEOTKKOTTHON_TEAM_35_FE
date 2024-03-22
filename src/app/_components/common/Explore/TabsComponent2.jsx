@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const TabsComponent = ({ items }) => {
+const TabsComponent2 = ({ items }) => {
   const [selectedTab, setSelectedTab] = useState(0);
 
   return (
@@ -39,4 +39,4 @@ const TabsComponent = ({ items }) => {
   );
 };
 
-export default TabsComponent;
+export default TabsComponent2;

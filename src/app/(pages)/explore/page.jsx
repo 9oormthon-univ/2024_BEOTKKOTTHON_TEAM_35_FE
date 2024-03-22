@@ -1,5 +1,5 @@
 import Header from "@/app/_components/home/Header";
-import TabsComponent from "@/app/_components/common/explore/TabsComponent";
+import TabsComponent2 from "@/app/_components/common/Explore/TabsComponent2";
 import BottomNav from "@/app/_components/bottom_nav";
 
 import Tab1 from "./tab1";
@@ -13,7 +13,7 @@ export default function Explore() {
           
           <Header />
   
-          <TabsComponent items={items}/>
+          <TabsComponent2 items={items}/>
   
   
           <BottomNav />

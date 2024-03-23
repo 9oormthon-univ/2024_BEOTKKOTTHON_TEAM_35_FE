@@ -9,6 +9,13 @@ import { Suspense } from "react"; // Suspense import 추가
 
   export default function KakaoLogin() {
 
+  
+    return (<Suspense fallback={<div>Loading...</div>}>
+        <KakaoCallback />
+    </Suspense>);
+  };
+
+
 const KakaoCallback = () => {
   const router = useRouter();
 
@@ -86,24 +93,8 @@ const KakaoCallback = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-    return <Suspense fallback={<div className="flex flex-col content-center items-center w-full h-full">
-      <div className="flex flex-col justify-center content-center items-center w-full max-w-[500px] h-screen bg-[#FCFCFF]">
 
-        <div className="flex flex-row mx-auto h-[50vh] md:h-[60vh] justify-center items-center">
-          <div className="w-40 h-40 rounded-full animate-spin 
-                                    border-2 border-solid border-blue-500 border-t-transparent"></div>
-        </div>
-
-      </div>
-
-    </div>}>
-      <Loading />
-    </Suspense>;
-  };
-  }
-
-function Loading() {
-  return <div className="flex flex-col content-center items-center w-full h-full">
+  return (<div className="flex flex-col content-center items-center w-full h-full">
     <div className="flex flex-col justify-center content-center items-center w-full max-w-[500px] h-screen bg-[#FCFCFF]">
 
       <div className="flex flex-row mx-auto h-[50vh] md:h-[60vh] justify-center items-center">
@@ -113,6 +104,7 @@ function Loading() {
 
     </div>
 
-  </div>
+  </div>)
 }
-  
+
+

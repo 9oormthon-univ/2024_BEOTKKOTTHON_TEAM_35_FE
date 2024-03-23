@@ -44,7 +44,7 @@ export default function Tab2() {
             {/* Filter */}
             {/* <div class="flex flex-row overflow-auto pt-5 px-4 gap-x-[8px]"> */}
             <div class="flex flex-row overflow-auto pt-4 px-4 gap-x-[8px]">
-                <div onClick={() => { setShowModal(true); setSelected(1); }} class={`flex flex-row justify-between min-w-max items-center h-[30px] px-[15px] bg-[#ECF3FF] border border-[#2528AE] rounded-[20px]`}>
+                <div onClick={() => { setShowModal(true); setSelected(1); }} class={`cursor-pointer flex flex-row justify-between min-w-max items-center h-[30px] px-[15px] bg-[#ECF3FF] border border-[#2528AE] rounded-[20px]`}>
                     <p class={`text-[#2528AE] min-w-max text-xs`}>나이</p>
                     <Image
                         src="/assets/images/b/explore/images/explore_filter_down.svg"
@@ -55,7 +55,7 @@ export default function Tab2() {
                     />
                 </div>
 
-                <div onClick={() => { setShowModal(true); setSelected(2); }} class={`flex flex-row justify-between min-w-max items-center h-[30px] px-[15px] ${compareArrays(selectedLocation, checkLocation) ? "bg-[#ECF3FF] border border-[#2528AE]" : "bg-[#F7F8F9]"} rounded-[20px]`}>
+                <div onClick={() => { setShowModal(true); setSelected(2); }} class={`cursor-pointer flex flex-row justify-between min-w-max items-center h-[30px] px-[15px] ${compareArrays(selectedLocation, checkLocation) ? "bg-[#ECF3FF] border border-[#2528AE]" : "bg-[#F7F8F9]"} rounded-[20px]`}>
                     <p class={`${compareArrays(selectedLocation, checkLocation) ?  "text-[#2528AE]" : "text-[#454C53]"} min-w-max text-xs`}>활동지역</p>
                     <Image
                         src="/assets/images/b/explore/images/explore_filter_down.svg"
@@ -66,7 +66,7 @@ export default function Tab2() {
                     />
                 </div>
 
-                <div onClick={() => { setShowModal(true); setSelected(3); }} class={`flex flex-row justify-between min-w-max items-center h-[30px] px-[15px] ${compareArrays(selectedPolicy, checkPolicy) ? "bg-[#ECF3FF] border border-[#2528AE]" : "bg-[#F7F8F9]"} rounded-[20px]`}>
+                <div onClick={() => { setShowModal(true); setSelected(3); }} class={`cursor-pointer flex flex-row justify-between min-w-max items-center h-[30px] px-[15px] ${compareArrays(selectedPolicy, checkPolicy) ? "bg-[#ECF3FF] border border-[#2528AE]" : "bg-[#F7F8F9]"} rounded-[20px]`}>
                     <p class={`${compareArrays(selectedPolicy, checkPolicy) ?  "text-[#2528AE]" : "text-[#454C53]"} min-w-max text-xs`}>정책분야</p>
                     <Image
                         src="/assets/images/b/explore/images/explore_filter_down.svg"
@@ -77,7 +77,7 @@ export default function Tab2() {
                     />
                 </div>
 
-                <div onClick={() => { setShowModal(true); setSelected(4); }} class={`flex flex-row justify-between min-w-max items-center h-[30px] px-[15px] ${compareArrays(selectedAcademic, checkAcademic) ? "bg-[#ECF3FF] border border-[#2528AE]" : "bg-[#F7F8F9]"} rounded-[20px]`}>
+                <div onClick={() => { setShowModal(true); setSelected(4); }} class={`cursor-pointer flex flex-row justify-between min-w-max items-center h-[30px] px-[15px] ${compareArrays(selectedAcademic, checkAcademic) ? "bg-[#ECF3FF] border border-[#2528AE]" : "bg-[#F7F8F9]"} rounded-[20px]`}>
                     <p class={`${compareArrays(selectedAcademic, checkAcademic) ?  "text-[#2528AE]" : "text-[#454C53]"} min-w-max text-xs`}>학력</p>
                     <Image
                         src="/assets/images/b/explore/images/explore_filter_down.svg"
@@ -88,7 +88,7 @@ export default function Tab2() {
                     />
                 </div>
 
-                <div onClick={() => { setShowModal(true); setSelected(5); }} class={`flex flex-row justify-between min-w-max items-center h-[30px] px-[15px] ${compareArrays(selectedHired, checkHired) ? "bg-[#ECF3FF] border border-[#2528AE]" : "bg-[#F7F8F9]"} rounded-[20px]`}>
+                <div onClick={() => { setShowModal(true); setSelected(5); }} class={`cursor-pointer flex flex-row justify-between min-w-max items-center h-[30px] px-[15px] ${compareArrays(selectedHired, checkHired) ? "bg-[#ECF3FF] border border-[#2528AE]" : "bg-[#F7F8F9]"} rounded-[20px]`}>
                     <p class={`${compareArrays(selectedHired, checkHired) ?  "text-[#2528AE]" : "text-[#454C53]"} min-w-max text-xs`}>취업상태</p>
                     <Image
                         src="/assets/images/b/explore/images/explore_filter_down.svg"
@@ -107,7 +107,7 @@ export default function Tab2() {
 
                 <div 
                     onClick={() => setSortByClicked(!sortByClicked)}
-                    class={`z-10 absolute right-[7px] bg-[#ffffff] mt-[13px] pt-[5px] pl-[6px] pr-[7px] pb-[7px] border ${sortByClicked ? "border-[#E8EBED]" : "border-[transparent]"}`}>
+                    class={`cursor-pointer z-10 absolute right-[7px] bg-[#ffffff] mt-[13px] pt-[5px] pl-[6px] pr-[7px] pb-[7px] border ${sortByClicked ? "border-[#E8EBED]" : "border-[transparent]"}`}>
                     <div class="flex items-center">
                         <p class="text-[#020D19] text-xs">{sortBy ? "최신순" : "추천순"}</p>
                         <Image
@@ -118,7 +118,7 @@ export default function Tab2() {
                             alt="FilterUp"
                         />
                     </div>
-                    <div onClick={() => setSortBy(!sortBy)} class={`flex items-center mt-2.5 ${sortByClicked ? "block" : "hidden"}`}>
+                    <div onClick={() => setSortBy(!sortBy)} class={`cursor-pointer flex items-center mt-2.5 ${sortByClicked ? "block" : "hidden"}`}>
                         <p class="text-[#C9CDD2] text-xs">{sortBy ? "추천순" : "최신순"}</p>
                     </div>
                 </div>
@@ -148,11 +148,11 @@ export default function Tab2() {
                             <div class="flex flex-col">
                                 <div class="flex items-start justify-between p-4">
                                     <div class="flex gap-x-7">
-                                        <p onClick={() => setSelected(1)} class={`${selected == 1 ? "text-[#020D19]" : "text-[#9EA4AA]"} text-base`}>나이</p>
-                                        <p onClick={() => setSelected(2)} class={`${selected == 2 ? "text-[#020D19]" : "text-[#9EA4AA]"} text-base`}>활동지역</p>
-                                        <p onClick={() => setSelected(3)} class={`${selected == 3 ? "text-[#020D19]" : "text-[#9EA4AA]"} text-base`}>정책분야</p>
-                                        <p onClick={() => setSelected(4)} class={`${selected == 4 ? "text-[#020D19]" : "text-[#9EA4AA]"} text-base`}>학력</p>
-                                        <p onClick={() => setSelected(5)} class={`${selected == 5 ? "text-[#020D19]" : "text-[#9EA4AA]"} text-base`}>취업상태</p>
+                                        <p onClick={() => setSelected(1)} class={`${selected == 1 ? "text-[#020D19]" : "text-[#9EA4AA]"} text-base cursor-pointer`}>나이</p>
+                                        <p onClick={() => setSelected(2)} class={`${selected == 2 ? "text-[#020D19]" : "text-[#9EA4AA]"} text-base cursor-pointer`}>활동지역</p>
+                                        <p onClick={() => setSelected(3)} class={`${selected == 3 ? "text-[#020D19]" : "text-[#9EA4AA]"} text-base cursor-pointer`}>정책분야</p>
+                                        <p onClick={() => setSelected(4)} class={`${selected == 4 ? "text-[#020D19]" : "text-[#9EA4AA]"} text-base cursor-pointer`}>학력</p>
+                                        <p onClick={() => setSelected(5)} class={`${selected == 5 ? "text-[#020D19]" : "text-[#9EA4AA]"} text-base cursor-pointer`}>취업상태</p>
                                     </div>
 
                                     {/* <button type="button" onClick={() => {
@@ -432,7 +432,7 @@ export default function Tab2() {
 
                                         </div>
                                     }
-                                    <div class="flex justify-center items-center mb-9 w-full h-[54px] bg-[#4E60FF] rounded-xl"
+                                    <div class="cursor-pointer flex justify-center items-center mb-9 w-full h-[54px] bg-[#4E60FF] rounded-xl"
                                         onClick={() => {
                                             // setAge(selectedAge);
                                             setShowModal(false);

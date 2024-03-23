@@ -13,7 +13,7 @@ const TabsComponent = ({ items }) => {
           <button
             key={index}
             onClick={() => setSelectedTab(index)}
-            class={`font-bold ${
+            class={`cursor-pointer font-bold ${
               selectedTab === index
                 ? "text-[#2528AE] underline underline-offset-8"
                 : ""

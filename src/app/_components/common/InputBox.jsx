@@ -37,7 +37,7 @@ const InputBox = ({
       />
       {value && (
         <div
-          className="absolute right-[24px] top-[50%] transform -translate-y-1/2 cursor-pointer"
+          className="cursor-pointer absolute right-[24px] top-[50%] transform -translate-y-1/2 cursor-pointer"
           onClick={handleClearInput}
         >
           <Image

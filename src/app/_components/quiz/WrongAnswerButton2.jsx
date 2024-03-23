@@ -3,7 +3,7 @@ import Image from "next/image";
 const WrongAnswerButton2 = ({ value, text, onClick, real, status }) => {
   return (
     <div
-      className={`flex w-full shadow-[0_2px_15px_0px_rgba(0,0,0,0.03)] ${
+      className={`cursor-pointer flex w-full shadow-[0_2px_15px_0px_rgba(0,0,0,0.03)] ${
         real ? "h-[54px]" : "h-[36px]"
       } justify-between items-center px-[15px] py-[9px] rounded-lg ${
         value && status == "wrong2"

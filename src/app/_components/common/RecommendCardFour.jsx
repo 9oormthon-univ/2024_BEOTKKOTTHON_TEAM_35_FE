@@ -5,7 +5,7 @@ import Image from "next/image";
 // 북마크 탭, 탐색 탭 카드
 const RecommendCardFour = ({ data, onClick }) => {
     return (
-        <div class="flex flex-row justify-between min-w-[358px] h-[134px] border-[0.5px] border-[#ECF3FF] rounded-lg drop-shadow-sm"
+        <div class="cursor-pointer flex flex-row justify-between min-w-[358px] h-[134px] border-[0.5px] border-[#ECF3FF] rounded-lg drop-shadow-sm"
             onClick={onClick}
         >
             <div class="flex">

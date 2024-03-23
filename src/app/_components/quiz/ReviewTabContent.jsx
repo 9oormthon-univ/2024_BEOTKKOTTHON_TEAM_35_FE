@@ -66,7 +66,7 @@ const ReviewTabContent = () => {
                       </div>
                     </div>
                     <div
-                      className="px-[6px] py-[3px] rounded-[8px] bg-[#F7F8F9] text-[#72787F]"
+                      className="cursor-pointer px-[6px] py-[3px] rounded-[8px] bg-[#F7F8F9] text-[#72787F]"
                       onClick={clickOK}
                     >
                       확인

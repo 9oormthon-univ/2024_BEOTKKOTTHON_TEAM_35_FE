@@ -40,6 +40,7 @@ const Modal = ({ title, close, confirm }) => {
             height={16}
             alt="close"
             onClick={close}
+            class="cursor-pointer"
           />
         </div>
         <div className="w-full">
@@ -52,6 +53,7 @@ const Modal = ({ title, close, confirm }) => {
                   height={32}
                   alt="present"
                   onClick={handleNext}
+                  class="cursor-pointer"
                 />
                 <div className="text-[#020D19] text-[22px] font-bold">200P</div>
               </div>
@@ -61,11 +63,12 @@ const Modal = ({ title, close, confirm }) => {
                 height={180}
                 alt="present"
                 onClick={handleNext}
+                class="cursor-pointer"
               />
               <div className="w-full flex bottom-0 justify-center gap-2">
                 <Link href="/quiz">
                   <button
-                    className="flex justify-center items-center w-full h-[44px] px-[16px] rounded-lg border border-[#4E60FF] text-[#4E60FF] text-[14px] font-semibold"
+                    className="cursor-pointer flex justify-center items-center w-full h-[44px] px-[16px] rounded-lg border border-[#4E60FF] text-[#4E60FF] text-[14px] font-semibold"
                     onClick={close}
                   >
                     퀴즈 홈으로
@@ -73,7 +76,7 @@ const Modal = ({ title, close, confirm }) => {
                 </Link>
                 <Link href="/mypage">
                   <button
-                    className="flex justify-center items-center w-full h-[44px] px-[16px] rounded-lg bg-[#4E60FF] text-[#FCFCFF] text-[14px] font-semibold"
+                    className="cursor-pointer flex justify-center items-center w-full h-[44px] px-[16px] rounded-lg bg-[#4E60FF] text-[#FCFCFF] text-[14px] font-semibold"
                     onClick={() => {
                       confirm && confirm();
                       close && close();
@@ -97,6 +100,7 @@ const Modal = ({ title, close, confirm }) => {
                   height={220}
                   alt="present"
                   onClick={handleNext}
+                  class="cursor-pointer"
                 />
               </div>
             </div>

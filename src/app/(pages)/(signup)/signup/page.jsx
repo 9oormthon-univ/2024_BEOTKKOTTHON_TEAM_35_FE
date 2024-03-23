@@ -74,7 +74,7 @@ export default function SignUp() {
           </div>
           <div className="w-full mt-[78px]">
             <div
-              className="w-full flex h-[44px] items-center mb-[8px]"
+              className="cursor-pointer w-full flex h-[44px] items-center mb-[8px]"
               onClick={clickAgreeAll}
             >
               <Image

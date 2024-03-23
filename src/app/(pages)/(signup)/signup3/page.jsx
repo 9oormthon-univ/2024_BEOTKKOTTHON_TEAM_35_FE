@@ -3,10 +3,10 @@
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useState, useCallback } from "react";
 import { useRecoilState } from "recoil";
-// atom 추가
+import { userEmail, userPassword1, userPassword2 } from "@/app/_state/user";
 
 import Button from "@/app/_components/common/Button";
 import DisabledButton from "@/app/_components/common/DisabledButton";
@@ -17,15 +17,18 @@ export default function SignUp3() {
   const [name, setName] = useState("");
   const router = useRouter();
 
+  const [idr, setIdr] = useRecoilState(userEmail);
+  const [passwordr, setPasswordr] = useRecoilState(userPassword1);
+  const [password2r, setPassword2r] = useRecoilState(userPassword2);
+
+  console.log("id", idr);
+  console.log("password", passwordr);
+  console.log("password2", password2r);
+
   const validateName = (name) => {
     const koreanRegex = /^[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]*$/;
     return koreanRegex.test(name) && name.length > 1;
   };
-
-  const params = useSearchParams();
-  const id = params.get("id");
-  const password1 = params.get("password");
-  const password2 = params.get("password2");
 
   const onSubmit = useCallback(() => {
     axios
@@ -33,24 +36,22 @@ export default function SignUp3() {
         `${process.env.NEXT_PUBLIC_API_BASE_URL}/users/register`,
         {
           nickname: name,
-          email: id,
-          password1: password1,
-          password2: password2,
+          email: idr,
+          password1: passwordr,
+          password2: password2r,
           point: 0,
           flagNotification: true,
         },
         {
           headers: {
-            "Content-Type": "application/json",
+            "Cache-Control": "no-store",
+            Pragma: "no-store",
+            Expires: "0",
           },
         }
       )
       .then((res) => {
-        localStorage.removeItem("key");
-        localStorage.setItem("key", token);
-        if (window.Android) {
-          window.Android.showToastMessage(name + "님, 환영합니다!");
-        }
+        console.log("성공");
         router.push("/signup4");
       })
       .catch((err) => {

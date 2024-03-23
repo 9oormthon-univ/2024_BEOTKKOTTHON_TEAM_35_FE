@@ -4,6 +4,8 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { useRecoilState } from "recoil";
+import { userEmail, userPassword1, userPassword2 } from "@/app/_state/user";
 
 import Button from "@/app/_components/common/Button";
 import DisabledButton from "@/app/_components/common/DisabledButton";
@@ -11,9 +13,9 @@ import Steps from "@/app/_components/common/Steps";
 import InputBox from "@/app/_components/common/InputBox";
 
 export default function SignUp() {
-  const [id, setId] = useState("");
-  const [password, setPassword] = useState("");
-  const [password2, setPassword2] = useState("");
+  const [id, setId] = useRecoilState(userEmail);
+  const [password, setPassword] = useRecoilState(userPassword1);
+  const [password2, setPassword2] = useRecoilState(userPassword2);
   const [showInvalidIdMessage, setShowInvalidIdMessage] = useState(false);
   const router = useRouter();
 
@@ -31,8 +33,6 @@ export default function SignUp() {
 
   const handleLogin = () => {
     if (validateId(id) && validatePassword(password)) {
-      console.log("ID:", id);
-      console.log("Password:", password);
       router.push(
         `/signup3?id=${encodeURIComponent(id)}&password=${encodeURIComponent(
           password

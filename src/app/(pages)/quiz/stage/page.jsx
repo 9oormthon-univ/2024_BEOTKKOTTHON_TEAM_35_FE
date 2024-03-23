@@ -81,8 +81,6 @@ function QuizStageContent({ token }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token, modifiedTitle]);
 
-  console.log("slice", slicedData);
-
   console.log("ddd", setData22);
 
   return (

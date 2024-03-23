@@ -8,14 +8,14 @@ export default function Agree2() {
         <div className="top-0 mt-[28px] flex w-full justify-between items-center h-[36px] px-4">
           <div className="size-[17px]" />
           <div className="text-[18px] font-bold">개인정보 수집 및 처리방침</div>
-          <Link href="/signup">
+          <a href="/signup">
             <Image
               src="/assets/icons/close.svg"
               width={17}
               height={17}
               alt="logo"
             />
-          </Link>
+          </a>
         </div>
         <div className="mt-[29px] text-[12px] flex flex-col px-4 items-start w-full h-full">
           서비스 제공 및 이용 제 1 조 (이용 계약의 성립) ① 이용계약은 이용자가

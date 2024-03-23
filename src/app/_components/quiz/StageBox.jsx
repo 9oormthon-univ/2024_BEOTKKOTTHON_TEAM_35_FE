@@ -8,9 +8,9 @@ const StageBox = ({ num }) => {
         stage {num}
       </div>
       <div className="absolute right-0 bottom-0 mr-[11px] mb-[15px] pl-[13px] pr-[10px] py-[8px] rounded-[20px] bg-[#FCFCFF] flex items-center shadow-md">
-        <Link href="/quiz/stage/1">
+        <a href="/quiz/stage/1">
           <div className="mr-[5px] text-[12px] text-[#4E60FF]">시작하기</div>
-        </Link>
+        </a>
         <Image
           src="/assets/icons/next-arrow-blue.svg"
           width={7}

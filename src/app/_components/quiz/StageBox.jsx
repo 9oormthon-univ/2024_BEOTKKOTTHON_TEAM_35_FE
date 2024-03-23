@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const StageBox = ({ num }) => {
   return (
-    <div className="relative flex flex-col justify-center items-center w-full h-[120px] border border-[#4E60FF] bg-[#ECF3FF] rounded-xl shadow-[0_1px_20px_0px_rgba(0,0,0,0.03)]">
+    <div className="cursor-pointer relative flex flex-col justify-center items-center w-full h-[120px] border border-[#4E60FF] bg-[#ECF3FF] rounded-xl shadow-[0_1px_20px_0px_rgba(0,0,0,0.03)]">
       <div className="flex text-[#4E60FF] text-[22px] font-bold">
         stage {num}
       </div>

@@ -8,7 +8,7 @@ const TabsComponent = ({ items }) => {
   return (
     <div class="w-full">
       {/* 탭 헤더 */}
-      <div class="flex justify-between items-center h-[44px] px-[16px]">
+      <div class="cursor-pointer flex justify-between items-center h-[44px] px-[16px]">
         {items.map((item, index) => (
           <button
             key={index}

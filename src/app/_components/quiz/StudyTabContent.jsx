@@ -9,7 +9,7 @@ const StudyTabContent = () => {
   const [doneQuiz, setDoneQuiz] = useRecoilState(doingTodayQuiz);
 
   return (
-    <div className="mt-[20px] mb-[50px] flex flex-col items-start w-full h-full px-4 pb-14">
+    <div className="cursor-pointer mt-[20px] mb-[50px] flex flex-col items-start w-full h-full px-4 pb-14">
       <div className="mt-[56px] w-full rounded-xl bg-[#FCFCFF] shadow-[0_1px_20px_0px_rgba(0,0,0,0.05)] py-[16px] border border-[#ECF3FF]">
         <div>
           <div className="flex w-full pt-[3px] px-[16px] items-center">

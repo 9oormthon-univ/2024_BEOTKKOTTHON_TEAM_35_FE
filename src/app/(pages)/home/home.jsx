@@ -76,10 +76,12 @@ export default function Tab1() {
                 alt="bulb"
               />
             </span>
-            <span class="text-lg font-bold ml-2">오늘의 금융 퀴즈</span>
+            <span class="cursor-pointer text-lg font-bold ml-2">
+              오늘의 금융 퀴즈
+            </span>
           </div>
 
-          <div className="mt-[15px] w-full flex flex-col h-[235px] p-[12px] bg-[#FFF] rounded-xl border border-[#ECF3FF]">
+          <div className="cursor-pointer mt-[15px] w-full flex flex-col h-[235px] p-[12px] bg-[#FFF] rounded-xl border border-[#ECF3FF]">
             {todayQuiz ? (
               <div className="w-full h-[235px]">
                 <div className="mt-[5px] text-[#020D19] text-[16px]">
@@ -142,11 +144,11 @@ export default function Tab1() {
           src="/assets/images/b/home/images/home_banner.svg"
           width={390}
           height={100}
-          class="w-full mt-10 aspect-[39/10]"
+          class="cursor-pointer w-full mt-10 aspect-[39/10]"
           alt="banner"
         />
 
-        <div class="flex flex-col px-4 mt-9">
+        <div class="cursor-pointer flex flex-col px-4 mt-9">
           <div class="flex items-center">
             <span>
               <Image
@@ -233,7 +235,7 @@ export default function Tab1() {
         {/* 섹션 나누기 바 추가 부분 */}
         <div class="w-100vw h-2 bg-[#F7F8F9]"></div>
 
-        <div class="flex flex-col px-4 mt-9">
+        <div class="cursor-pointer flex flex-col px-4 mt-9">
           <div class="flex items-center mt-[26px]">
             <span>
               <Image

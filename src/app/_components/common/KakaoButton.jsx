@@ -8,8 +8,8 @@ const KakaoButton = () => {
   };
 
   return (
-    <div
-      className="flex justify-between items-center w-full h-[54px] px-5 py-4 rounded-xl bg-[#FEE500]"
+
+    <div class="cursor-pointer flex justify-between items-center w-full h-[54px] px-5 py-4 rounded-xl bg-[#FEE500]"
       onClick={handelKakaoLogin}
     >
       <Image src="/assets/icons/kakao.svg" width={18} height={16} alt="kakao" />

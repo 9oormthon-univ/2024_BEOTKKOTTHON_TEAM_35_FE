@@ -76,6 +76,7 @@ const Modal = ({ home, title, close, confirm }) => {
             height={16}
             alt="close"
             onClick={close}
+            class="cursor-pointer"
           />
         </div>
         <div className="w-full">
@@ -88,6 +89,7 @@ const Modal = ({ home, title, close, confirm }) => {
                   height={32}
                   alt="present"
                   onClick={handleNext}
+                  class="cursor-pointer"
                 />
                 <div className="text-[#020D19] text-[22px] font-bold">200P</div>
               </div>
@@ -97,11 +99,12 @@ const Modal = ({ home, title, close, confirm }) => {
                 height={180}
                 alt="present"
                 onClick={handleNext}
+                class="cursor-pointer"
               />
               <div className="w-full p-[0] flex bottom-0 justify-center gap-2">
                 <div className="w-full">
                   <button
-                    className="flex justify-center items-center w-full h-[44px] px-[16px] rounded-lg border border-[#4E60FF] text-[#4E60FF] text-[14px] font-semibold"
+                    className="cursor-pointer flex justify-center items-center w-full h-[44px] px-[16px] rounded-lg border border-[#4E60FF] text-[#4E60FF] text-[14px] font-semibold"
                     onClick={home ? goToHome : goToQuiz}
                   >
                     {home ? "홈으로" : "퀴즈 홈으로"}
@@ -109,7 +112,7 @@ const Modal = ({ home, title, close, confirm }) => {
                 </div>
                 <div className="w-full">
                   <button
-                    className="flex justify-center items-center w-full h-[44px] px-[16px] rounded-lg bg-[#4E60FF] text-[#FCFCFF] text-[14px] font-semibold"
+                    className="cursor-pointer flex justify-center items-center w-full h-[44px] px-[16px] rounded-lg bg-[#4E60FF] text-[#FCFCFF] text-[14px] font-semibold"
                     onClick={goToMyPage}
                   >
                     포인트 사용하기
@@ -130,6 +133,7 @@ const Modal = ({ home, title, close, confirm }) => {
                   height={220}
                   alt="present"
                   onClick={handleNext}
+                  class="cursor-pointer"
                 />
               </div>
             </div>

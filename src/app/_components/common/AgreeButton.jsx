@@ -7,7 +7,7 @@ const AgreeButton = ({ num, text, agree, onClick, next }) => {
   console.log(num);
   return (
     <div className="w-full flex h-[36px] items-center">
-      <div className="w-full flex items-center" onClick={onClick}>
+      <div className="w-full flex items-center cursor-pointer" onClick={onClick}>
         <Image
           src={
             agree

@@ -14,7 +14,7 @@ const TabsComponent = ({ items }) => {
             <div
               key={index}
               onClick={() => setSelectedTab(index)}
-              className={`w-full font-bold text-[18px] text-center pt-[10px] pb-[5px] ${
+              className={`cursor-pointer w-full font-bold text-[18px] text-center pt-[10px] pb-[5px] ${
                 selectedTab === index
                   ? "mt-[1px] text-[#2528AE] border-b-2 border-[#2528AE]"
                   : "text-[#9EA4AA] border-b-[1px] border-[#9EA4AA]"

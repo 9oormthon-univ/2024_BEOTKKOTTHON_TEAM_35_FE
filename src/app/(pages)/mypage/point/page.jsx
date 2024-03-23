@@ -34,11 +34,33 @@ export default function Account() {
                 <p class="text-[#020D19] text-lg font-bold">당첨</p>
 
                 <Image
-                    src="/assets/images/b/mypage/images/yay.svg"
-                    width={97}
-                    height={97}
-                    alt="Back"
+                    src="/assets/images/b/mypage/images/point_0.svg"
+                    width={252}
+                    height={87}
+                    alt="point 0"
                 />
+
+                <Image
+                    src="/assets/images/b/mypage/images/point_1.svg"
+                    width={402}
+                    height={231}
+                    alt="point 1"
+                />
+
+                <Image
+                    src="/assets/images/b/mypage/images/point_2.png"
+                    width={323}
+                    height={311}
+                    alt="point 2"
+                />
+
+                <Image
+                    src="/assets/images/b/mypage/images/point_3.svg"
+                    width={349}
+                    height={50}
+                    alt="point 4"
+                />
+
 
                 <p class="font-bold text-lg">스타벅스 아메리카노 교환권</p>
             </div>
@@ -90,7 +112,7 @@ export default function Account() {
                     <div class="flex w-full px-4 gap-x-3">
                         <div onClick={() => {
                             setClicked(1);
-                        }} class={`flex flex-col w-full h-[144px] ${clicked != 0 ? (clicked == 1 ? "bg-[#ffffff]" : "bg-[#9CB6FF]") : "bg-[#ffffff]"} justify-center items-center rounded-xl`}>
+                        }} class={`flex flex-col w-full h-[144px] ${clicked != 0 ? (clicked == 1 ? "bg-gradient-to-b from-[#FFFFFF] via-[#DDE8FF] to-[#9CB6FF]" : "bg-[#758DFF]") : "bg-gradient-to-b from-[#FFFFFF] via-[#DDE8FF] to-[#9CB6FF]"} justify-center items-center rounded-xl`}>
                             <Image
                                 src="/assets/images/b/mypage/images/round_cube.svg"
                                 width={61}
@@ -100,22 +122,22 @@ export default function Account() {
                         </div>
                         <div onClick={() => {
                             setClicked(2);
-                        }} class={`flex flex-col w-full h-[144px] ${clicked != 0 ? (clicked == 2 ? "bg-[#ffffff]" : "bg-[#9CB6FF]") : "bg-[#ffffff]"} justify-center items-center rounded-xl`}>
+                        }} class={`flex flex-col w-full h-[144px] ${clicked != 0 ? (clicked == 2 ? "bg-gradient-to-b from-[#FFFFFF] via-[#DDE8FF] to-[#9CB6FF]" : "bg-[#758DFF]") : "bg-gradient-to-b from-[#FFFFFF] via-[#DDE8FF] to-[#9CB6FF]"} justify-center items-center rounded-xl`}>
                             <Image
                                 src="/assets/images/b/mypage/images/cone.svg"
                                 width={50}
                                 height={60}
-                                alt="cube"
+                                alt="cone"
                             />
                         </div>
                         <div onClick={() => {
                             setClicked(3);
-                        }} class={`flex flex-col w-full h-[144px] ${clicked != 0 ? (clicked == 3 ? "bg-[#ffffff]" : "bg-[#9CB6FF]") : "bg-[#ffffff]"} justify-center items-center rounded-xl`}>
+                        }} class={`flex flex-col w-full h-[144px] ${clicked != 0 ? (clicked == 3 ? "bg-gradient-to-b from-[#FFFFFF] via-[#DDE8FF] to-[#9CB6FF]" : "bg-[#758DFF]") : "bg-gradient-to-b from-[#FFFFFF] via-[#DDE8FF] to-[#9CB6FF]"} justify-center items-center rounded-xl`}>
                             <Image
                                 src="/assets/images/b/mypage/images/rock.svg"
                                 width={62}
                                 height={59}
-                                alt="cube"
+                                alt="rock"
                             />
                         </div>
                     </div>
@@ -125,7 +147,7 @@ export default function Account() {
                             console.log(clicked);
                             // setClicked(0);
                             clicked != 0 && setShowModal(true);
-                        }} class={`flex justify-between items-center w-full h-[56px] px-4 ${clicked == 0 ? "bg-[#9CB6FF]" : "bg-[#FFFFFF]"} rounded-xl`}>
+                        }} class={`flex justify-between items-center w-full h-[56px] px-4 ${clicked == 0 ? "bg-[#758DFF]" : "bg-[#ffffff] opacity-80"} rounded-xl`}>
                             <p class="font-bold text-[#4E60FF]">교환권 확인하기</p>
 
                             <Image

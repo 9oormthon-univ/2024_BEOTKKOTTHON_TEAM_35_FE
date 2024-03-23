@@ -25,8 +25,8 @@ export default withPWA({
   async rewrites() {
     return [
       {
-        source: '/users/login', // 요청이 /api로 시작할 경우
-        destination: `${process.env.NEXT_PUBLIC_API_BASE_URL}/users/login`, // 실제 API 서버의 주소로 리다이렉트
+        source: '/users/register',
+        destination: `${process.env.NEXT_PUBLIC_API_BASE_URL}/users/register`,
       },
     ];
   },

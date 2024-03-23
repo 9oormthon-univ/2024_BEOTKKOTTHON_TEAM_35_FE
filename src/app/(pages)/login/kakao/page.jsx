@@ -4,8 +4,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react"; // Suspense import 추가
-import { apiRequest } from "@/api/axios";
-import { API_URL } from "@/api/urls";
 
 export default function QuizReviewStage() {
   return (

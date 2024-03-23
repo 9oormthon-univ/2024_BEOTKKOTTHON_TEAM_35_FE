@@ -14,3 +14,8 @@ export const userPassword2 = atom({
   key: 'userPassword2',
   default: ""
 });
+
+export const userID = atom({
+  key: 'userID',
+  default: ""
+});

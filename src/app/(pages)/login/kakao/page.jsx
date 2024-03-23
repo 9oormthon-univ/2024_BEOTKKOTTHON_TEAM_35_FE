@@ -3,10 +3,21 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react"; // Suspense import 추가
 import { apiRequest } from "@/api/axios";
 import { API_URL } from "@/api/urls";
 
-const KakaoCallback = () => {
+export default function QuizReviewStage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      {" "}
+      {/* Suspense 추가 */}
+      <KakaoCallback />
+    </Suspense>
+  );
+}
+
+function KakaoCallback() {
   const searchParams = useSearchParams();
   const kakaoAuthCode = searchParams.get("code");
 
@@ -54,6 +65,4 @@ const KakaoCallback = () => {
   }, [kakaoAuthCode]);
 
   return <div>Loading</div>;
-};
-
-export default KakaoCallback;
+}

@@ -8,14 +8,14 @@ export default function Agree1() {
         <div className="top-0 mt-[28px] flex w-full justify-between items-center h-[36px] px-4">
           <div className="size-[17px]" />
           <div className="text-[18px] font-bold">이용약관</div>
-          <Link href="/signup">
+          <a href="/signup">
             <Image
               src="/assets/icons/close.svg"
               width={17}
               height={17}
               alt="logo"
             />
-          </Link>
+          </a>
         </div>
         <div className="mt-[29px] text-[12px] flex flex-col px-4 items-start w-full h-full">
           제 1 장 총칙 제 1 조 (목적) 본 약관은 구름톤 유니브 주최 벚꽃톤이

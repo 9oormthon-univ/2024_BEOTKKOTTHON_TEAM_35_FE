@@ -43,7 +43,7 @@ const ReviewTabContent = () => {
   };
 
   return (
-    <div className="mt-[20px] mb-[50px] flex flex-col items-start w-full h-full pb-14 bg-[#ECF3FF]">
+    <div className="cursor-pointer mt-[20px] mb-[50px] flex flex-col items-start w-full h-full pb-14 bg-[#ECF3FF]">
       <div className="mt-[39px] w-full bg-[#ECF3FF] shadow-ml border-tl-[20px] px-[16px] py-[18px]">
         <div className="text-[22px] text-[#4E60FF] font-bold mb-[17px]">
           <div className="mt-[25px] w-full rounded-xl bg-[#FFF] shadow-[0_1px_20px_0px_rgba(0,0,0,0.05)] px-[16px] py-[18px]">

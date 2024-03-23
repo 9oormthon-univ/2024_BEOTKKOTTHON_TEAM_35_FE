@@ -5,7 +5,7 @@ const GraphBar = ({ text, num }) => {
   const progress = (num / 100) * 100;
 
   return (
-    <div className="w-full flex items-center">
+    <div className="cursor-pointer w-full flex items-center">
       <div className="w-[80px] text-[14px] text-[#161750] font-normal">
         {text}
       </div>

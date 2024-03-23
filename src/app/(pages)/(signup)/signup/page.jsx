@@ -55,14 +55,14 @@ export default function SignUp() {
     <div className="flex flex-col content-center items-center w-full h-full">
       <div className="flex flex-col content-center items-center w-full max-w-[500px] h-screen bg-[#FCFCFF]">
         <div className="top-0 mt-[28px] flex flex-col w-full justify-center items-start h-[36px] px-4">
-          <Link href="/login">
+          <a href="/login">
             <Image
               src="/assets/icons/back-arrow.svg"
               width={24}
               height={24}
               alt="logo"
             />
-          </Link>
+          </a>
         </div>
         <div className="w-full mt-[20px] mb-[29px] px-4">
           <Steps step={3} num={1} />
@@ -126,9 +126,9 @@ export default function SignUp() {
         </div>
         <div className="w-full px-4 mb-[34px]">
           {agree1 && agree2 && agree3 ? (
-            <Link href="/signup2">
+            <a href="/signup2">
               <Button text="동의하고 시작하기" />
-            </Link>
+            </a>
           ) : (
             <DisabledButton text="동의하고 시작하기" />
           )}

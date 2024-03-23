@@ -8,14 +8,14 @@ export default function Agree2() {
         <div className="top-0 mt-[28px] flex w-full justify-between items-center h-[36px] px-4">
           <div className="size-[17px]" />
           <div className="text-[18px] font-bold">개인정보 마케팅 활용 동의</div>
-          <Link href="/signup">
+          <a href="/signup">
             <Image
               src="/assets/icons/close.svg"
               width={17}
               height={17}
               alt="logo"
             />
-          </Link>
+          </a>
         </div>
         <div className="mt-[29px] text-[12px] flex flex-col px-4 items-start w-full h-full">
           1. 개인정보의 수집항목 및 수집방법  통계청 나라통계사이트에서는

@@ -1,17 +1,24 @@
 "use client";
 
+import axios from "axios";
+
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { getMessaging, onMessage, getToken } from "firebase/messaging";
 import { initializeApp } from "firebase/app";
+import { useRecoilState } from "recoil";
+import { Scholarship, financialProduct } from "../_state/products";
 
 export default function Splash() {
   const router = useRouter();
 
+  const [getSData, setGetSData] = useRecoilState(Scholarship);
+  const [getData, setGetData] = useRecoilState(financialProduct);
+
   useEffect(() => {
     const timer = setTimeout(() => {
-      router.push("/first");
+      router.push("/explore");
     }, 2000);
 
     return () => clearTimeout(timer);
@@ -58,7 +65,46 @@ export default function Splash() {
   };
 
   useEffect(() => {
+    const result1 = async () => {
+      axios
+      .get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/scholarship/search`, {
+        headers: { "Content-Type": "application/x-www-form-urlencoded;charset=utf-8" },
+        params: {
+          keyword: "",
+        }
+      })
+        .then((response) => {
+          console.log("scholarship success");
+          console.log(response.data);
+          setGetSData(response.data.sort(() => Math.random() - 0.5));
+        })
+        .catch((error) => {
+          console.error("scholarship error");
+        });
+    };
+    result1();
+
+
+    const result3 = async () => {
+      axios
+        .get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/search`, {
+          keyword: "",
+        })
+        .then((response) => {
+          console.log("product success");
+          console.log(response.data);
+          setGetData(response.data.sort(() => Math.random() - 0.5));
+        })
+        .catch((error) => {
+          console.error("product error");
+        });
+    };
+    result3();
+
+
+
     onMessageFCM();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

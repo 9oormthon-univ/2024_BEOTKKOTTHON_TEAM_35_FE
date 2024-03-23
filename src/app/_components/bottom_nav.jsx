@@ -22,7 +22,7 @@ const BottomNav = () => {
             <div class="flex w-[23px] h-[23px] justify-center items-center">
               <Home fill="#4E60FF" />
             </div>
-            <span class="mt-[5px] font-bold text-[#4E60FF] text-[10px] font-medium leading-4">
+            <span class="cursor-pointer mt-[5px] font-bold text-[#4E60FF] text-[10px] font-medium leading-4">
               홈
             </span>
           </div>
@@ -32,7 +32,7 @@ const BottomNav = () => {
               <div class="flex w-[23px] h-[23px] justify-center items-center">
                 <Home fill="#C9CDD2" />
               </div>
-              <span class="mt-[5px] text-[#9EA4AA] text-[10px] font-medium">
+              <span class="cursor-pointer mt-[5px] text-[#9EA4AA] text-[10px] font-medium">
                 홈
               </span>
             </div>
@@ -54,7 +54,7 @@ const BottomNav = () => {
               <div class="flex w-[23px] h-[23px] justify-center items-center">
                 <Explore fill="#C9CDD2" />
               </div>
-              <span class="mt-[5px] text-[#9EA4AA] text-[10px] font-medium">
+              <span class="cursor-pointer mt-[5px] text-[#9EA4AA] text-[10px] font-medium">
                 탐색
               </span>
             </div>
@@ -66,7 +66,7 @@ const BottomNav = () => {
             <div class="flex w-[23px] h-[23px] justify-center items-center">
               <Quiz fill="#4E60FF" />
             </div>
-            <span class="mt-[5px] font-bold text-[#4E60FF] text-[10px] font-medium leading-4">
+            <span class="cursor-pointer mt-[5px] font-bold text-[#4E60FF] text-[10px] font-medium leading-4">
               퀴즈
             </span>
           </div>
@@ -76,7 +76,7 @@ const BottomNav = () => {
               <div class="flex w-[23px] h-[23px] justify-center items-center">
                 <Quiz fill="#C9CDD2" />
               </div>
-              <span class="mt-[5px] text-[#9EA4AA] text-[10px] font-medium">
+              <span class="cursor-pointer mt-[5px] text-[#9EA4AA] text-[10px] font-medium">
                 퀴즈
               </span>
             </div>
@@ -88,7 +88,7 @@ const BottomNav = () => {
             <div class="flex w-[23px] h-[23px] justify-center items-center">
               <My fill="#4E60FF" />
             </div>
-            <span class="mt-[5px] font-bold text-[#4E60FF] text-[10px] font-medium leading-4">
+            <span class="cursor-pointer mt-[5px] font-bold text-[#4E60FF] text-[10px] font-medium leading-4">
               MY
             </span>
           </div>
@@ -98,7 +98,7 @@ const BottomNav = () => {
               <div class="flex w-[23px] h-[23px] justify-center items-center">
                 <My fill="#C9CDD2" />
               </div>
-              <span class="mt-[5px] text-[#9EA4AA] text-[10px] font-medium">
+              <span class="cursor-pointer mt-[5px] text-[#9EA4AA] text-[10px] font-medium">
                 MY
               </span>
             </div>

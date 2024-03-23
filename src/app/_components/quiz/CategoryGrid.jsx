@@ -3,8 +3,13 @@ import CategoryBox from "./CategoryBox";
 
 const CategoryGrid = ({ review }) => {
   return (
-    <div className="grid grid-cols-2 grid-flow-row gap-2.5 w-full mt-[19px]">
-      <Link href={review ? "/quiz/review-stage/c1" : "/quiz/stage/c1"}>
+    <div className="cursor-pointer grid grid-cols-2 grid-flow-row gap-2.5 w-full mt-[19px]">
+      <Link
+        href={{
+          pathname: review ? "/quiz/review-stage" : "/quiz/stage",
+          query: { title: "금융개념" },
+        }}
+      >
         <CategoryBox title="금융개념" imgNum={1} />
       </Link>
       <Link href={review ? "/quiz/review-stage/c2" : "/quiz/stage/c2"}>

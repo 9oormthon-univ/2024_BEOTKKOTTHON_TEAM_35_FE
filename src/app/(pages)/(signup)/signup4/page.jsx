@@ -29,9 +29,9 @@ export default function SignUp4() {
           </div>
         </div>
         <div className="w-full px-4 mb-[34px]">
-          <Link href="/home">
+          <a href="/home">
             <Button text="시작하기" />
-          </Link>
+          </a>
         </div>
       </div>
     </div>

@@ -7,12 +7,11 @@ import { answerStep } from "@/app/_state/quiz";
 
 import AnswerButton from "./AnswerButton";
 import CategoryGrid from "./CategoryGrid";
+import ProcessGraph from "./ProcessGraph";
 
 const ReviewTabContent = () => {
   const [answer, setAnswer] = useState(false); // 정답인지 아닌지 판별하는 변수
   const [last, setLast] = useRecoilState(answerStep);
-
-  console.log("last", last);
 
   // 3개 중 하나만 선택 가능
   const [selectedValue, setSelectedValue] = useState(null);
@@ -44,74 +43,22 @@ const ReviewTabContent = () => {
   };
 
   return (
-    <div className="mt-[20px] mb-[50px] flex flex-col items-start w-full h-full pb-14">
-      <div className="mt-[39px] w-full bg-[#ECF3FF] shadow-md px-[16px] py-[18px]">
+    <div className="mt-[20px] mb-[50px] flex flex-col items-start w-full h-full pb-14 bg-[#ECF3FF]">
+      <div className="mt-[39px] w-full bg-[#ECF3FF] shadow-ml border-tl-[20px] px-[16px] py-[18px]">
         <div className="text-[22px] text-[#4E60FF] font-bold mb-[17px]">
-          오늘의 오답노트
-        </div>
-        <div className="w-full flex flex-col h-[235px] p-[12px] bg-[#FCFCFF] rounded-xl">
-          {last ? (
-            <div>오늘의 퀴즈 완료!</div>
-          ) : (
-            <>
-              <div>
-                {answer ? (
-                  <div className="w-full flex justify-between mt-[8px] mb-[41px]">
-                    <div className="flex">
-                      <div className="px-[6px] py-[3px] rounded-[8px] bg-[#ECF3FF] text-[#2528AE]">
-                        정답
-                      </div>
-                      <div className="ml-[8px] text-[18px] text-[#2528AE] font-bold">
-                        {question[0].correctAnswer}
-                      </div>
-                    </div>
-                    <div
-                      className="cursor-pointer px-[6px] py-[3px] rounded-[8px] bg-[#F7F8F9] text-[#72787F]"
-                      onClick={clickOK}
-                    >
-                      확인
-                    </div>
-                  </div>
-                ) : (
-                  <div className="w-full">
-                    <div className="mb-[5px] text-[#4E60FF] text-[18px] font-bold">
-                      Q.
-                    </div>
-                    <div className="mb-[23px] text-[16px]">
-                      {question[0].question}
-                    </div>
-                  </div>
-                )}
-              </div>
-              <div className="flex w-full">
-                <div className="w-full mb-[2px] grid gap-[6px]">
-                  <AnswerButton
-                    value={selectedValue === question[0].wrongAnswer1}
-                    onClick={() => handleClick(question[0].wrongAnswer1)}
-                    text={question[0].wrongAnswer1}
-                    answer={answer}
-                  />
-                  <AnswerButton
-                    value={selectedValue === question[0].correctAnswer}
-                    onClick={() => handleClick(question[0].correctAnswer)}
-                    text={question[0].correctAnswer}
-                    answer={answer}
-                  />
-                  <AnswerButton
-                    value={selectedValue === question[0].wrongAnswer2}
-                    onClick={() => handleClick(question[0].wrongAnswer2)}
-                    text={question[0].wrongAnswer2}
-                    answer={answer}
-                  />
-                </div>
-              </div>
-            </>
-          )}
+          <div className="mt-[25px] w-full rounded-xl bg-[#FFF] shadow-[0_1px_20px_0px_rgba(0,0,0,0.05)] px-[16px] py-[18px]">
+            <div className="text-[#020D19] text-[18px] font-bold">
+              학습 진도율
+            </div>
+            <ProcessGraph />
+          </div>
         </div>
       </div>
-      <div className="px-4 mt-[24px] text-[22px] font-bold">복습하기</div>
-      <div className="px-4 w-full">
-        <CategoryGrid review={true} />
+      <div className="w-full bg-[#FFF] rounded-tl-[20px] rounded-tr-[20px] shadow-[0_1px_20px_0px_rgba(0,0,0,0.07)]">
+        <div className="px-4 mt-[24px] text-[22px] font-bold ">복습하기</div>
+        <div className="px-4 w-full">
+          <CategoryGrid review={true} />
+        </div>
       </div>
     </div>
   );

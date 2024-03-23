@@ -1,13 +1,49 @@
 import React from "react";
 import { useState } from "react";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useRecoilState } from "recoil";
+import { currentQuizProgress } from "@/app/_state/quiz-progress";
+import { quizModal } from "@/app/_state/quiz-modal-open";
+import { homeModal } from "@/app/_state/home-modal-open";
+import { doingTodayQuiz } from "@/app/_state/doing-today-quiz";
 import Image from "next/image";
 
-const Modal = ({ title, close, confirm }) => {
+const Modal = ({ home, title, close, confirm }) => {
+  const router = useRouter();
   const [index, setIndex] = useState(0);
+  const [quizProgress, setQuizProgress] = useRecoilState(currentQuizProgress);
+  const [quizModalOpen, setQuizModalOpen] = useRecoilState(
+    home ? homeModal : quizModal
+  );
+  const [doneQuiz, setDoneQuiz] = useRecoilState(doingTodayQuiz);
 
   const handleNext = () => {
     setIndex((prevIndex) => prevIndex + 1); // 이전 퀴즈 인덱스로 업데이트
+  };
+
+  const goToHome = () => {
+    setQuizProgress(0);
+    setQuizModalOpen(false);
+    setDoneQuiz(true);
+    router.push("/home");
+    confirm && confirm();
+    close && close();
+  };
+  const goToQuiz = () => {
+    setQuizProgress(0);
+    setQuizModalOpen(false);
+    setDoneQuiz(true);
+    router.push("/quiz");
+    confirm && confirm();
+    close && close();
+  };
+  const goToMyPage = () => {
+    setQuizProgress(0);
+    setQuizModalOpen(false);
+    setDoneQuiz(true);
+    router.push("/mypage/point");
+    confirm && confirm();
+    close && close();
   };
 
   const contents = [
@@ -65,26 +101,23 @@ const Modal = ({ title, close, confirm }) => {
                 onClick={handleNext}
                 class="cursor-pointer"
               />
-              <div className="w-full flex bottom-0 justify-center gap-2">
-                <Link href="/quiz">
+              <div className="w-full p-[0] flex bottom-0 justify-center gap-2">
+                <div className="w-full">
                   <button
                     className="cursor-pointer flex justify-center items-center w-full h-[44px] px-[16px] rounded-lg border border-[#4E60FF] text-[#4E60FF] text-[14px] font-semibold"
-                    onClick={close}
+                    onClick={home ? goToHome : goToQuiz}
                   >
-                    퀴즈 홈으로
+                    {home ? "홈으로" : "퀴즈 홈으로"}
                   </button>
-                </Link>
-                <Link href="/mypage">
+                </div>
+                <div className="w-full">
                   <button
                     className="cursor-pointer flex justify-center items-center w-full h-[44px] px-[16px] rounded-lg bg-[#4E60FF] text-[#FCFCFF] text-[14px] font-semibold"
-                    onClick={() => {
-                      confirm && confirm();
-                      close && close();
-                    }}
+                    onClick={goToMyPage}
                   >
                     포인트 사용하기
                   </button>
-                </Link>
+                </div>
               </div>
             </div>
           )}

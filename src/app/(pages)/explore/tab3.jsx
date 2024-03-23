@@ -476,27 +476,37 @@ export default function Tab3() {
 
                                     <div class="flex justify-between mt-[17px]">
                                         <p class="text-sm text-[#72787F] font-medium">신청마감일</p>
-                                        <p class="text-sm text-[#020D19] font-medium">2024.04.01</p>
+                                        <p class="text-sm text-[#020D19] font-medium mb-8">2024.04.01</p>
                                     </div>
 
-                                    <div class="w-full mt-5 border-b border-[#E8EBED]"></div>
+                                    {/* <div class="w-full mt-5 border-b border-[#E8EBED]"></div>
 
                                     <p class="text-[#2528AE] font-bold mt-[14px]">상세정보</p>
-                                    <p class="text-[#020D19] text-sm mt-4 mb-[47px]">{card.desc1}</p>
+                                    <p class="text-[#020D19] text-sm mt-4 mb-[47px]">{card.desc1}</p> */}
                                 </div>
 
                                 <div class="flex w-full h-20 border-t-[0.3px] border-[#9CB6FF]">
-                                    <div class="flex flex-col mt-2 items-center ml-4 text-center">
-                                        <p>img</p>
-                                        <p class="w-[30px] text-[#4E60FF] text-[11px]">스크랩</p>
-                                    </div>
+                                <div class="flex flex-col mt-2 items-center ml-4 text-center">
+                                    <Image
+                                        src="/assets/images/b/explore/images/bookmark_outline.svg"
+                                        width={20}
+                                        height={20}
+                                        alt="bookmark"
+                                    />
+                                    <p class="w-[30px] text-[#4E60FF] text-[11px] mt-3">스크랩</p>
+                                </div>
 
-                                    <div class="h-[37px] mt-2 mx-4 border-r-[0.5px] border-[#E8EBED]"></div>
+                                <div class="h-[37px] mt-[11px] mx-4 border-r-[0.5px] border-[#E8EBED]"></div>
 
-                                    <div class="flex flex-col mt-2 items-center text-center">
-                                        <p>img</p>
-                                        <p class="w-[30px] text-[#4E60FF] text-[11px]">공유</p>
-                                    </div>
+                                <div class="flex flex-col mt-2 items-center text-center">
+                                    <Image
+                                        src="/assets/images/b/explore/images/share.svg"
+                                        width={20}
+                                        height={20}
+                                        alt="bookmark"
+                                    />
+                                    <p class="w-[30px] mt-[11px] text-[#4E60FF] text-[11px]">공유</p>
+                                </div>
 
                                     <div class="flex justify-center items-center w-full h-12 mt-2 ml-[26px] mr-4 bg-[#4E60FF] rounded-lg">
                                         <p class="text-[#FCFCFF] font-semibold text-sm">홈페이지 바로가기</p>

@@ -9,7 +9,6 @@ import "./RangeSliderStyle.css";
 import RecommendCardThree from '@/app/_components/common/RecommendCardThree';
 import SelectLocation from "@/app/_components/common/Explore/SelectLocation";
 import SelectAcademic from "@/app/_components/common/Explore/SelectAcademic";
-import Link from "next/link";
 import Image from "next/image";
 
 
@@ -120,11 +119,11 @@ export default function Tab1() {
 
                 {
                     card_data.map((data, index) => (
-                        <Link key={index} href={`./explore/detail/${index}`}>
+                        <a key={index} href={`./explore/detail/${index}`}>
                             <RecommendCardThree
                                 data={data}
                             />
-                        </Link>
+                        </a>
 
                     ))
                 }

@@ -1,7 +1,25 @@
+"use client";
+
 import RecommendCardThree from "@/app/_components/common/RecommendCardThree";
 import Image from "next/image";
+import { useRecoilValue } from "recoil";
+import { Scholarship } from "@/app/_state/products";
+import { usePathname } from 'next/navigation';
 
 export default function DetailID() {
+  const pathname = usePathname();
+  const pieces = pathname.split(/[\s/]+/);
+  const last = pieces[pieces.length - 1];
+
+  // const [getSData, SData] = useRecoilValue(Scholarship);
+  // console.log("getSData", getSData);
+
+  // let obj = getSData.find(o => o.scholarshipId == last);
+
+  // console.log("obj", obj);
+  // console.log("getSData", getSData);
+
+
   return (
     <div class="flex flex-col items-center">
       <div class="w-full max-w-[500px]">
@@ -118,19 +136,7 @@ export default function DetailID() {
 
         <div class="w-full px-4 mt-[25px] mb-[52px]">
           <p className="mt-[29px] text-sm w-full whitespace-pre-line">
-            {`한국전통문화대학교, 한국농수산대학도 대상 포함
-
-인문100년장학금
-신청기간: 2024. 3. 19.(화) ~ 2024. 4. 5.(금)
-지원대상: 대한민국 국적 소지자로서 국내 4년제 대학 인문·사회계열 학과(부)에 재학 중인 1학년 또는 3학년
-※ 계열구분은 선발년도 대학별 학과계열 분류체계에 따름
-지원유형
-전공탐색 I · II유형(최대 4년 지원) : 1학년 신입생
-전공확립 I · II유형(최대 2년 지원) : 3학년 재학생
-※ I유형: 등록금 + 생활비 지원, II유형: 등록금 지원
-기본자격
-전공확립유형(3학년)은 직전학기까지 총 평균성적 및 이수학점 기준 충족 필수
-직전학기까지 총 평균 백분위점수 90점 이상 또는 평점 3.6이상/4.5만점(3.4이상/4.3만점), 취득 이수학점이 소속대학 졸업이수학점의 40% 이상`}
+            {/* {`${obj.detail1}`} */}
           </p>
         </div>
 

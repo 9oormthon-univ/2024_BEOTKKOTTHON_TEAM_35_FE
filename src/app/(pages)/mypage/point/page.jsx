@@ -34,31 +34,10 @@ export default function Account() {
                 <p class="text-[#020D19] text-lg font-bold">당첨</p>
 
                 <Image
-                    src="/assets/images/b/mypage/images/point_0.svg"
-                    width={252}
-                    height={87}
-                    alt="point 0"
-                />
-
-                <Image
-                    src="/assets/images/b/mypage/images/point_1.svg"
-                    width={402}
-                    height={231}
-                    alt="point 1"
-                />
-
-                <Image
-                    src="/assets/images/b/mypage/images/point_2.png"
-                    width={323}
-                    height={311}
-                    alt="point 2"
-                />
-
-                <Image
-                    src="/assets/images/b/mypage/images/point_3.svg"
-                    width={349}
-                    height={50}
-                    alt="point 4"
+                    src="/assets/images/b/mypage/images/yay.svg"
+                    width={118}
+                    height={118}
+                    alt="Back"
                 />
 
 
@@ -102,12 +81,37 @@ export default function Account() {
                 </div>
 
                 <div class="flex flex-col items-center bg-gradient-to-b from-[#363AF5] to-[#758DFF]">
-                    <Image
-                        src="/assets/images/b/mypage/images/point_tab.svg"
-                        width={390}
-                        height={850}
-                        alt="point"
-                    />
+                <Image
+                    src="/assets/images/b/mypage/images/point_0.svg"
+                    width={252}
+                    height={87}
+                    alt="point 0"
+                    class="mt-[20px]"
+                />
+
+                <Image
+                    src="/assets/images/b/mypage/images/point_1.png"
+                    width={402}
+                    height={231}
+                    alt="point 1"
+                    class="mt-[40px]"
+                />
+
+                <Image
+                    src="/assets/images/b/mypage/images/point_2.svg"
+                    width={323}
+                    height={311}
+                    alt="point 2"
+                    class="mt-[50px]"
+                />
+
+                <Image
+                    src="/assets/images/b/mypage/images/point_3.svg"
+                    width={349}
+                    height={50}
+                    alt="point 4"
+                    class="my-[20px]"
+                />
 
                     <div class="flex w-full px-4 gap-x-3">
                         <div onClick={() => {

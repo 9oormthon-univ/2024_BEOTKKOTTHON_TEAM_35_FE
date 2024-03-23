@@ -18,7 +18,7 @@ export default function Splash() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      router.push("/explore");
+      router.push("/first");
     }, 2000);
 
     return () => clearTimeout(timer);

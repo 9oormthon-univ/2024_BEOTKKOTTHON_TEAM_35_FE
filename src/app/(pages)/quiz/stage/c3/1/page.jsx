@@ -7,6 +7,7 @@ import { useRecoilState } from "recoil";
 import { currentQuizProgress } from "@/app/_state/quiz-progress";
 import { quizModal } from "@/app/_state/quiz-modal-open";
 import { real_data } from "@/app/_state/category1";
+import { stage1_c3 } from "@/app/_state/category3";
 
 import ProgressBar from "@/app/_components/quiz/ProgressBar";
 import QuizCard from "@/app/_components/quiz/QuizCard";
@@ -18,8 +19,8 @@ export default function QuizID() {
   const [quizProgress, setQuizProgress] = useRecoilState(currentQuizProgress);
   const [quizModalOpen, setQuizModalOpen] = useRecoilState(quizModal);
 
-  const [data, setData] = useRecoilState(real_data);
-  console.log("으아아아ㅏㅇ", data);
+  const [questions, setQuestions] = useRecoilState(stage1_c3);
+  console.log("qqq", questions);
 
   const handleNextQuiz = () => {
     //setCurrentQuizIndex((prevIndex) => prevIndex + 1); // 다음 퀴즈 인덱스로 업데이트
@@ -42,80 +43,8 @@ export default function QuizID() {
   };
   const goToClear = () => {
     setIsOpen(false);
+    setQuizProgress(1);
   };
-
-  const questions = [
-    {
-      num: 1,
-      question: "현재 우리나라 기준금리는 얼마일까?",
-      wrongAnswer1: "3%",
-      wrongAnswer2: "2%",
-      correctAnswer: "1.5%",
-    },
-    {
-      num: 2,
-      question: "어느 기업이 대한민국의 대표적인 IT 기업인가요?",
-      wrongAnswer1: "LG전자",
-      wrongAnswer2: "SK하이닉스",
-      correctAnswer: "삼성전자",
-    },
-    {
-      num: 3,
-      question: "야식으로 뭐 먹을가요?",
-      wrongAnswer1: "치킨",
-      wrongAnswer2: "피자",
-      correctAnswer: "떡볶이",
-    },
-    {
-      num: 4,
-      question: "현재 우리나라 기준금리는 얼마일까?",
-      wrongAnswer1: "3%",
-      wrongAnswer2: "2%",
-      correctAnswer: "1.5%",
-    },
-    {
-      num: 5,
-      question: "어느 기업이 대한민국의 대표적인 IT 기업인가요?",
-      wrongAnswer1: "LG전자",
-      wrongAnswer2: "SK하이닉스",
-      correctAnswer: "삼성전자",
-    },
-    {
-      num: 6,
-      question: "야식으로 뭐 먹을가요?",
-      wrongAnswer1: "치킨",
-      wrongAnswer2: "피자",
-      correctAnswer: "떡볶이",
-    },
-    {
-      num: 7,
-      question: "현재 우리나라 기준금리는 얼마일까?",
-      wrongAnswer1: "3%",
-      wrongAnswer2: "2%",
-      correctAnswer: "1.5%",
-    },
-    {
-      num: 8,
-      question: "어느 기업이 대한민국의 대표적인 IT 기업인가요?",
-      wrongAnswer1: "LG전자",
-      wrongAnswer2: "SK하이닉스",
-      correctAnswer: "삼성전자",
-    },
-    {
-      num: 9,
-      question: "야식으로 뭐 먹을가요?",
-      wrongAnswer1: "치킨",
-      wrongAnswer2: "피자",
-      correctAnswer: "떡볶이",
-    },
-    {
-      num: 10,
-      question: "FAVORITE FOOD?",
-      wrongAnswer1: "치킨",
-      wrongAnswer2: "피자",
-      correctAnswer: "떡볶이",
-    },
-  ];
 
   return (
     <div>
@@ -147,7 +76,7 @@ export default function QuizID() {
             </div>
           </div>
           <div className="w-full mt-[75px] px-4">
-            <ProgressBar num={questions[quizProgress].num} />
+            <ProgressBar num={quizProgress} />
           </div>
           <div className="w-full max-w-[500px] mt-[25px]">
             <QuizCard

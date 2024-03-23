@@ -1,20 +1,16 @@
 "use client";
 
-import React from 'react';
-import useNavigation from '@/hook/use-navigation';
+import React from "react";
+import useNavigation from "@/hook/use-navigation";
 
-import Home from './bottom_images/bottom_home.svg'
-import Explore from './bottom_images/bottom_explore.svg'
-import Quiz from './bottom_images/bottom_quiz.svg'
-import My from './bottom_images/bottom_my.svg'
+import Home from "./bottom_images/bottom_home.svg";
+import Explore from "./bottom_images/bottom_explore.svg";
+import Quiz from "./bottom_images/bottom_quiz.svg";
+import My from "./bottom_images/bottom_my.svg";
 
 const BottomNav = () => {
-  const {
-    isHomeActive,
-    isExploreActive,
-    isQuizActive,
-    isMyPageActive,
-  } = useNavigation();
+  const { isHomeActive, isExploreActive, isQuizActive, isMyPageActive } =
+    useNavigation();
 
   return (
     <div
@@ -24,17 +20,21 @@ const BottomNav = () => {
         {isHomeActive ? (
           <div class="flex flex-col justify-center items-center">
             <div class="flex w-[23px] h-[23px] justify-center items-center">
-              <Home fill="#4E60FF"/>
+              <Home fill="#4E60FF" />
             </div>
-            <span class="mt-[5px] font-bold text-[#4E60FF] text-[10px] font-medium leading-4">홈</span>
+            <span class="mt-[5px] font-bold text-[#4E60FF] text-[10px] font-medium leading-4">
+              홈
+            </span>
           </div>
         ) : (
           <a href="/home" class="flex items-center relative">
             <div class="flex flex-col justify-center items-center">
               <div class="flex w-[23px] h-[23px] justify-center items-center">
-                <Home fill="#C9CDD2"/>
+                <Home fill="#C9CDD2" />
               </div>
-              <span class="mt-[5px] text-[#9EA4AA] text-[10px] font-medium">홈</span>
+              <span class="mt-[5px] text-[#9EA4AA] text-[10px] font-medium">
+                홈
+              </span>
             </div>
           </a>
         )}
@@ -42,17 +42,21 @@ const BottomNav = () => {
         {isExploreActive ? (
           <div class="flex flex-col justify-center items-center">
             <div class="flex w-[23px] h-[23px] justify-center items-center">
-              <Explore fill="#4E60FF"/>
+              <Explore fill="#4E60FF" />
             </div>
-            <span class="mt-[5px] font-bold text-[#4E60FF] text-[10px] font-medium leading-4">탐색</span>
+            <span class="mt-[5px] font-bold text-[#4E60FF] text-[10px] font-medium leading-4">
+              탐색
+            </span>
           </div>
         ) : (
           <a href="/explore" class="flex items-center relative">
             <div class="flex flex-col justify-center items-center">
               <div class="flex w-[23px] h-[23px] justify-center items-center">
-                <Explore fill="#C9CDD2"/>
+                <Explore fill="#C9CDD2" />
               </div>
-              <span class="mt-[5px] text-[#9EA4AA] text-[10px] font-medium">탐색</span>
+              <span class="mt-[5px] text-[#9EA4AA] text-[10px] font-medium">
+                탐색
+              </span>
             </div>
           </a>
         )}
@@ -60,37 +64,43 @@ const BottomNav = () => {
         {isQuizActive ? (
           <div class="flex flex-col justify-center items-center">
             <div class="flex w-[23px] h-[23px] justify-center items-center">
-              <Quiz fill="#4E60FF"/>
+              <Quiz fill="#4E60FF" />
             </div>
-            <span class="mt-[5px] font-bold text-[#4E60FF] text-[10px] font-medium leading-4">퀴즈</span>
+            <span class="mt-[5px] font-bold text-[#4E60FF] text-[10px] font-medium leading-4">
+              퀴즈
+            </span>
           </div>
         ) : (
           <a href="/quiz" class="flex items-center">
             <div class="flex flex-col justify-center items-center">
               <div class="flex w-[23px] h-[23px] justify-center items-center">
-                <Quiz fill="#C9CDD2"/>
+                <Quiz fill="#C9CDD2" />
               </div>
-              <span class="mt-[5px] text-[#9EA4AA] text-[10px] font-medium">퀴즈</span>
+              <span class="mt-[5px] text-[#9EA4AA] text-[10px] font-medium">
+                퀴즈
+              </span>
             </div>
           </a>
         )}
 
-
-
         {isMyPageActive ? (
-           <div class="flex flex-col justify-center items-center">
+          <div class="flex flex-col justify-center items-center">
             <div class="flex w-[23px] h-[23px] justify-center items-center">
-              <My fill="#4E60FF"/>
+              <My fill="#4E60FF" />
             </div>
-            <span class="mt-[5px] font-bold text-[#4E60FF] text-[10px] font-medium leading-4">MY</span>
+            <span class="mt-[5px] font-bold text-[#4E60FF] text-[10px] font-medium leading-4">
+              MY
+            </span>
           </div>
         ) : (
           <a href="/mypage" class="flex items-center">
             <div class="flex flex-col justify-center items-center">
               <div class="flex w-[23px] h-[23px] justify-center items-center">
-                <My fill="#C9CDD2"/>
+                <My fill="#C9CDD2" />
               </div>
-              <span class="mt-[5px] text-[#9EA4AA] text-[10px] font-medium">MY</span>
+              <span class="mt-[5px] text-[#9EA4AA] text-[10px] font-medium">
+                MY
+              </span>
             </div>
           </a>
         )}

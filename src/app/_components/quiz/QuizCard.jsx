@@ -57,14 +57,14 @@ const QuizCard = ({ index, questions, next, open }) => {
         </div>
       </div>
       <div className="w-full max-w-[500px]">
-        <div className="z-0 absolute right-0 mt-[50px] mr-[10px]">
+        {/* <div className="z-0 absolute right-0 mt-[50px] mr-[10px]">
           <Image
             src={`/assets/images/main-character.svg`}
             width={150}
             height={176}
             alt="character"
           />
-        </div>
+        </div> */}
         <div className="z-1 absolute bottom-0 w-full max-w-[500px] h-[430px] flex flex-col justify-between bottom-0 bg-[#FFF] rounded-t-2xl px-4">
           {answerStatus == "correct" ? (
             <div className="px-[6px] py-[3px] rounded-[8px] absolute mt-[35px] bg-[#ECF3FF] text-[#2528AE]">

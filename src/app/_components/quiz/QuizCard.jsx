@@ -106,7 +106,10 @@ const QuizCard = ({ index, questions, next, open }) => {
           </div>
           <div className=" w-full max-w-[500px] mb-[50px]">
             {index == 9 ? (
-              <Button text="완료" onClick={open} />
+              // <Button text="완료" onClick={open} />
+              <Link href="/quiz/stage/recommend">
+                <Button text="완료" />
+              </Link>
             ) : showNextButton ? (
               <Button text="다음 문제" onClick={handleNextQuestion} />
             ) : selectedValue ? (

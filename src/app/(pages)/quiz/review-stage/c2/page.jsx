@@ -8,7 +8,7 @@ import StageBox from "@/app/_components/quiz/StageBox";
 import LockStageBox from "@/app/_components/quiz/LockStageBox";
 
 export default function QuizStageContent() {
-  const title = "금융 지표";
+  const title = "금융 상품";
 
   // useEffect(() => {
   //   axios
@@ -18,9 +18,9 @@ export default function QuizStageContent() {
   //       for (let i = 0; i < response.data.length; i += 10) {
   //         slicedData.push(response.data.slice(i, i + 10));
   //       }
-  //       setData41(slicedData[0] || []);
-  //       setData42(slicedData[1] || []);
-  //       setData43(slicedData[2] || []);
+  //       setData21(slicedData[0] || []);
+  //       setData22(slicedData[1] || []);
+  //       setData23(slicedData[2] || []);
   //     })
   //     .catch((error) => {
   //       console.error(error);
@@ -46,15 +46,15 @@ export default function QuizStageContent() {
           </div>
         </div>
         <div className="w-full mt-[99px] px-4 text-[22px] font-bold">
-          금융 지표
+          {title}
         </div>
         <div className="w-full mt-[17px] px-4 text-[16px]">
           한 개의 스테이지를 완료할 때마다 포인트를 뽑을 수 있어요{" "}
         </div>
         <div className="mt-[30px] flex flex-col gap-[12px] w-full px-4">
-          <StageBox num={1} c="c4" />
-          <LockStageBox num={2} c="c4" />
-          <LockStageBox num={3} c="c4" />
+          <StageBox num={1} c="c2" />
+          <LockStageBox num={3} c="c2" />
+          <LockStageBox num={3} c="c2" />
         </div>
       </div>
     </div>

@@ -2,5 +2,5 @@ import { atom } from "recoil";
 
 export const currentQuizProgress = atom({
   key: 'currentQuizProgress',
-  default: 1
+  default: 0
 });

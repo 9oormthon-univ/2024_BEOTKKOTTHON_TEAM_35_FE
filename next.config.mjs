@@ -19,4 +19,15 @@ export default withPWA({
 
     return config;
   },
+
+  reactStrictMode: true,
+  swcMinify: true,
+  async rewrites() {
+    return [
+      {
+        source: '/users/register',
+        destination: `${process.env.NEXT_PUBLIC_API_BASE_URL}/users/register`,
+      },
+    ];
+  },
 });

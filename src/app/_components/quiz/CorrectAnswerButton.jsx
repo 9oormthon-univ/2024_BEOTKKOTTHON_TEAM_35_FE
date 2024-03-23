@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useState } from "react";
 
 const CorrectAnswerButton = ({
   value,
@@ -7,17 +8,27 @@ const CorrectAnswerButton = ({
   real,
   status,
   realAnswer,
+  blockClick,
 }) => {
+  const [clicked, setClicked] = useState(false); // 클릭 여부 상태 관리
+
+  const handleClick = () => {
+    if (!blockClick) {
+      onClick(); // 클릭 이벤트가 허용되면 onClick 함수 호출
+      setClicked(true); // 클릭 여부 상태 업데이트
+    }
+  };
+
   return (
     <div
-      className={`flex w-full ${
+      className={`flex w-full shadow-[0_2px_15px_0px_rgba(0,0,0,0.03)] ${
         real ? "h-[54px]" : "h-[36px]"
-      } justify-between items-center px-[15px] py-[9px] rounded-lg ${
+      } justify-between items-center px-[15px] py-[9px] rounded-xl ${
         value || realAnswer == "correct"
           ? "bg-[#ECF3FF] border border-[#4E60FF]"
-          : "bg-[#F7F8F9]"
+          : "bg-[#FCFCFF] border border-[#E8EBED]"
       }`}
-      onClick={onClick}
+      onClick={handleClick}
     >
       {real ? <div className="size-[16px]" /> : ""}
       <div

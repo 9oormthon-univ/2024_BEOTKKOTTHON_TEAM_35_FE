@@ -9,19 +9,8 @@ export default function SignUp4() {
   return (
     <div className="flex flex-col content-center items-center w-full h-full">
       <div className="flex flex-col content-center items-center w-full max-w-[500px] h-screen bg-[#FCFCFF]">
-        <div className="top-0 mt-[28px] flex flex-col w-full justify-center items-end h-[36px] px-4">
-          <Link href="/home">
-            <Image
-              src="/assets/icons/close.svg"
-              width={17}
-              height={17}
-              alt="logo"
-            />
-          </Link>
-        </div>
-
         <div className="flex flex-col px-4 items-start w-full h-full">
-          <div className="mt-[10px] text-[28px] font-bold">
+          <div className="mt-[36px] text-[28px] font-bold">
             대학생,
             <br /> 사회 초년생의
             <br /> 첫번째 금융 가이드

@@ -3,7 +3,15 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const InputBox = ({ value, setValue, placeholder, validate, max, type }) => {
+const InputBox = ({
+  value,
+  setValue,
+  placeholder,
+  validate,
+  max,
+  type,
+  onBlur,
+}) => {
   const handleChange = (e) => {
     setValue(e.target.value);
   };
@@ -16,13 +24,14 @@ const InputBox = ({ value, setValue, placeholder, validate, max, type }) => {
     <div className="w-full relative">
       <input
         className={`w-full h-[54px] px-[24px] py-[16px] rounded-xl border focus:border-[#4E60FF] border-${
-          value && validate ? "[#4E60FF]" : "[#C9CDD2]"
+          value ? (validate ? "[#4E60FF]" : "[#FF4B4B]") : "[#C9CDD2]"
         } text-[#020D19] placeholder:text-[#9EA4AA] focus:outline-none`}
         placeholder={placeholder}
         value={value}
         onChange={handleChange}
         maxLength={max}
         type={type}
+        onBlur={onBlur}
       />
       {value && (
         <div

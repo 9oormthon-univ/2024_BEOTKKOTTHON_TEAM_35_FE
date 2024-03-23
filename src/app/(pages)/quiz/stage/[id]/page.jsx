@@ -3,6 +3,9 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { useRecoilState } from "recoil";
+import { currentQuizProgress } from "@/app/_state/quiz-progress";
+import { quizModal } from "@/app/_state/quiz-modal-open";
 
 import ProgressBar from "@/app/_components/quiz/ProgressBar";
 import QuizCard from "@/app/_components/quiz/QuizCard";
@@ -10,15 +13,21 @@ import Modal from "@/app/_components/common/Modal";
 
 export default function QuizID() {
   const router = useRouter();
-  const [currentQuizIndex, setCurrentQuizIndex] = useState(0); // 현재 퀴즈 인덱스 상태
+  //const [currentQuizIndex, setCurrentQuizIndex] = useState(0); // 현재 퀴즈 인덱스 상태
+  const [quizProgress, setQuizProgress] = useRecoilState(currentQuizProgress);
+  const [quizModalOpen, setQuizModalOpen] = useRecoilState(quizModal);
 
   const handleNextQuiz = () => {
-    setCurrentQuizIndex((prevIndex) => prevIndex + 1); // 다음 퀴즈 인덱스로 업데이트
+    //setCurrentQuizIndex((prevIndex) => prevIndex + 1); // 다음 퀴즈 인덱스로 업데이트
+    setQuizProgress((prevIndex) => prevIndex + 1);
   };
 
   const handlePrevQuiz = () => {
-    setCurrentQuizIndex((prevIndex) => prevIndex - 1); // 이전 퀴즈 인덱스로 업데이트
+    //setCurrentQuizIndex((prevIndex) => prevIndex - 1);
+    setQuizProgress((prevIndex) => prevIndex - 1); // 이전 퀴즈 인덱스로 업데이트
   };
+
+  console.log("Q", quizProgress);
 
   const [isOpen, setIsOpen] = useState(false);
   const open = () => {
@@ -108,9 +117,9 @@ export default function QuizID() {
     <div>
       <div className="flex flex-col content-center items-center w-full h-full">
         <div className="flex flex-col content-center items-center w-full max-w-[500px] h-screen bg-[#4E60FF]">
-          <div className="fixed w-full bg-[#4E60FF]">
-            <div className="mt-[28px] flex w-full justify-between items-center h-[36px] px-4">
-              {currentQuizIndex > 0 ? (
+          <div className="fixed w-full max-w-[500px]  bg-[#4E60FF]">
+            <div className="mt-[6px] flex w-full justify-between items-center h-[36px] px-4">
+              {quizProgress > 0 ? (
                 <Image
                   src="/assets/icons/back-arrow-white.svg"
                   width={11}
@@ -133,12 +142,12 @@ export default function QuizID() {
               />
             </div>
           </div>
-          <div className="w-full mt-[99px] px-4">
-            <ProgressBar num={questions[currentQuizIndex].num} />
+          <div className="w-full mt-[75px] px-4">
+            <ProgressBar num={questions[quizProgress].num} />
           </div>
-          <div className="w-full mt-[25px]">
+          <div className="w-full max-w-[500px] mt-[25px]">
             <QuizCard
-              index={currentQuizIndex}
+              index={quizProgress}
               questions={questions}
               next={handleNextQuiz}
               open={open}
@@ -146,7 +155,7 @@ export default function QuizID() {
           </div>
         </div>
       </div>
-      {isOpen && (
+      {quizModalOpen && (
         <Modal title="포인트 받기" close={close} confirm={goToClear} />
       )}
     </div>

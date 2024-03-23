@@ -1,6 +1,9 @@
+import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useRecoilState } from "recoil";
+import { tk } from "@/app/_state/token";
 
 import DisabledButton from "../common/DisabledButton";
 import Button from "../common/Button";
@@ -9,6 +12,9 @@ import WrongAnswerButton from "./WrongAnswerButton";
 import WrongAnswerButton2 from "./WrongAnswerButton2";
 
 const QuizCard = ({ index, questions, next, open }) => {
+  // const token = localStorage.getItem("token");
+  const [token, setToken] = useRecoilState(tk);
+
   const [selectedValue, setSelectedValue] = useState(null); // 선택한 값
   const [answerStatus, setAnswerStatus] = useState(null); // correct , wrong1 , wrong2
   const [realAnswer, setRealAnswer] = useState(null); // 틀린답 입력 시 정답을 바로 알려주기 위해 있는 상태
@@ -37,6 +43,44 @@ const QuizCard = ({ index, questions, next, open }) => {
       setBlockClick(true);
       setShowNextButton(true);
     }
+
+    // axios
+    //   .post(
+    //     `${process.env.NEXT_PUBLIC_API_BASE_URL}/${questions[index].id}/solve`,
+    //     {
+    //       selectedValue,
+    //     },
+    //     {
+    //       headers: {
+    //         Authorization: `Bearer ${token}`,
+    //         "Content-Type": "application/json",
+    //         "Access-Control-Allow-Credentials": "true",
+    //       },
+    //     }
+    //   )
+    //   .then((response) => {
+    //     console.log("성공!", response);
+    //     if (selectedValue === questions[index].correctAnswer) {
+    //       setAnswerStatus("correct");
+    //       setBlockClick(true);
+    //       setShowNextButton(true);
+    //     }
+    //     if (selectedValue === questions[index].wrongAnswer1) {
+    //       setAnswerStatus("wrong1");
+    //       setRealAnswer("correct");
+    //       setBlockClick(true);
+    //       setShowNextButton(true);
+    //     }
+    //     if (selectedValue === questions[index].wrongAnswer2) {
+    //       setAnswerStatus("wrong2");
+    //       setRealAnswer("correct");
+    //       setBlockClick(true);
+    //       setShowNextButton(true);
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     console.error(error);
+    //   });
   };
 
   const handleNextQuestion = () => {
@@ -46,6 +90,10 @@ const QuizCard = ({ index, questions, next, open }) => {
     setRealAnswer(null); //
     setShowNextButton(false); // 다음 문제 버튼을 숨김
     setBlockClick(false); // 클릭을 다시 활성화
+  };
+
+  const handleStep = () => {
+    setStep(step++);
   };
 
   return (

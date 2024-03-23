@@ -30,36 +30,55 @@ export default function SignUp3() {
     return koreanRegex.test(name) && name.length > 1;
   };
 
-  const onSubmit = useCallback(() => {
+  const onSubmit = () => {
     axios
-      .post(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/users/register`,
-        {
-          nickname: name,
-          email: idr,
-          password1: passwordr,
-          password2: password2r,
-          point: 0,
-          flagNotification: true,
-        },
-        {
-          headers: {
-            "Cache-Control": "no-store",
-            Pragma: "no-store",
-            Expires: "0",
-          },
-        }
-      )
-      .then((res) => {
-        console.log("성공");
+      .post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/users/register`, {
+        nickname: name,
+        email: idr,
+        password: passwordr,
+        point: 0,
+        flagNotification: true,
+        oauthProvider: "email",
+      })
+      .then((response) => {
+        console.log("success!!!!", response);
         router.push("/signup4");
       })
-      .catch((err) => {
-        console.error(err);
-        // handle error
+      .catch((error) => {
+        console.error(error);
       });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [name]);
+  };
+
+  // const onSubmit = async () => {
+  //   try {
+  //     // 서버로 사용자 정보를 등록하기 위해 API를 호출합니다.
+  //     const response = await axios.post(
+  //       `${process.env.NEXT_PUBLIC_API_BASE_URL}/users/register`,
+  //       {
+  //         nickname: name,
+  //         email: idr,
+  //         password: passwordr,
+  //         point: 0,
+  //         flagNotification: true,
+  //         oauthProvider: "email",
+  //       }
+  //       {
+  //         headers: {
+  //           "Cache-Control": "no-store",
+  //           Pragma: "no-store",
+  //           Expires: "0",
+  //         },
+  //       }
+  //     );
+  //     // API 호출이 성공하면 사용자를 다음 단계로 안내합니다.
+  //     console.log(response);
+  //     router.push("/signup4");
+  //   } catch (error) {
+  //     // API 호출 중에 오류가 발생한 경우, 콘솔에 오류를 기록하고 사용자에게 적절한 메시지를 표시합니다.
+  //     console.error("등록 중 오류 발생:", error);
+  //     // 여기서 오류를 처리하여 사용자에게 적절한 메시지를 표시할 수 있습니다.
+  //   }
+  // };
 
   return (
     <div className="flex flex-col content-center items-center w-full h-full">

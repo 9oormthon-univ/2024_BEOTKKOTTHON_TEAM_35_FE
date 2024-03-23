@@ -5,7 +5,8 @@ import AnswerButton from "@/app/_components/quiz/AnswerButton";
 import RecommendCardOne from "@/app/_components/common/RecommendCardOne";
 import RecommendCardTwo from "@/app/_components/common/RecommendCardTwo";
 import Modal from "@/app/_components/common/Modal";
-import { homeModal, todayQuiz } from "@/app/_state/home-modal-open";
+import { homeModal } from "@/app/_state/home-modal-open";
+import { doingTodayQuiz } from "@/app/_state/doing-today-quiz";
 import { useState } from "react";
 import { useRecoilState } from "recoil";
 import { answerStep } from "@/app/_state/quiz";
@@ -16,7 +17,20 @@ export default function Tab1() {
   const [last, setLast] = useRecoilState(answerStep);
   const [quizModalOpen, setQuizModalOpen] = useRecoilState(homeModal);
   const [firstModalOpen, setFirstModalOpen] = useState(false);
-  const [todayQuizz, setTodayQuizz] = useRecoilState(todayQuiz);
+  const [todayQuizz, setTodayQuizz] = useRecoilState(doingTodayQuiz);
+
+  const question = [
+    {
+      id: 0,
+      question:
+        "금융 거래에서 재무 상태를 추적하고 기록하는 과정은 무엇인가요?",
+      correctAnswer: "회계",
+      wrongAnswer1: "신용 경색",
+      wrongAnswer2: "무역",
+      category: "카테고리",
+      answerStatus: "false",
+    },
+  ];
 
   const close2 = () => {
     setQuizModalOpen(false);
@@ -47,18 +61,6 @@ export default function Tab1() {
     }
   };
 
-  const question = [
-    {
-      id: 0,
-      question: "현재 우리나라 기준금리는 얼마일까?",
-      correctAnswer: "연 3.25%",
-      wrongAnswer1: "연 3.0%",
-      wrongAnswer2: "연 3.5%",
-      category: "카테고리",
-      answerStatus: "false",
-    },
-  ];
-
   const clickOK = () => {
     setLast(true);
   };
@@ -82,7 +84,7 @@ export default function Tab1() {
           </div>
 
           <div className="cursor-pointer mt-[15px] w-full flex flex-col h-[235px] p-[12px] bg-[#FFF] rounded-xl border border-[#ECF3FF]">
-            {todayQuiz ? (
+            {todayQuizz ? (
               <div className="w-full h-[235px]">
                 <div className="mt-[5px] text-[#020D19] text-[16px]">
                   Q. {question[0].question}
@@ -114,7 +116,11 @@ export default function Tab1() {
                 </a>
               </div>
             ) : (
-              <div className="flex w-full">
+              <div className="flex flex-col w-full">
+                <div className="text-[#4E60FF] text-[18px] font-bold">Q.</div>
+                <div className="mt-[5px] mb-[23px] text-[#020D19] text-[16px]">
+                  {question[0].question}
+                </div>
                 <div className="w-full mb-[2px] grid gap-[6px]">
                   <AnswerButton
                     value={selectedValue === question[0].wrongAnswer1}

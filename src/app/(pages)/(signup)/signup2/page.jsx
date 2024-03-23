@@ -33,11 +33,7 @@ export default function SignUp() {
 
   const handleLogin = () => {
     if (validateId(id) && validatePassword(password)) {
-      router.push(
-        `/signup3?id=${encodeURIComponent(id)}&password=${encodeURIComponent(
-          password
-        )}&password2=${encodeURIComponent(password2)}`
-      );
+      router.push("/signup3");
     } else {
       console.error("아이디/비밀번호가 일치하지 않습니다.");
     }

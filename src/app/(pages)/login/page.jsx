@@ -1,8 +1,13 @@
 "use client";
 
+import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { useRecoilState } from "recoil";
+import { userID } from "@/app/_state/user";
+import { tk } from "@/app/_state/token";
 
 import InputBox from "@/app/_components/common/InputBox";
 import Button from "@/app/_components/common/Button";
@@ -10,10 +15,13 @@ import DisabledButton from "@/app/_components/common/DisabledButton";
 import KakaoButton from "@/app/_components/common/KakaoButton";
 
 export default function Login() {
+  const router = useRouter();
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   const [autoLogin, setAutoLogin] = useState(false);
   const [noID, setNoID] = useState(false);
+  const [userId, setUserId] = useRecoilState(userID);
+  const [token, setToken] = useRecoilState(tk);
 
   const validateId = (id) => {
     // 이메일 정규식 확인
@@ -38,6 +46,20 @@ export default function Login() {
     if (validateId(id) && validatePassword(password)) {
       console.log("ID:", id);
       console.log("Password:", password);
+      axios
+        .post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/users/login`, {
+          email: id,
+          password: password,
+        })
+        .then((response) => {
+          setToken(response.data.token);
+          // localStorage.setItem("token", response.data.token);
+          setUserId(response.data.userId);
+          router.push("/home");
+        })
+        .catch((error) => {
+          console.error(error);
+        });
     } else {
       setNoID(true);
       console.error("존재하지 않는 아이디 입니다.");
@@ -108,9 +130,7 @@ export default function Login() {
           </div>
           <div className="w-full">
             {validateId(id) && validatePassword(password) ? (
-              <a href="/home">
-                <Button text="로그인" onClick={handleLogin} />
-              </a>
+              <Button text="로그인" onClick={handleLogin} />
             ) : (
               <DisabledButton text="로그인" />
             )}

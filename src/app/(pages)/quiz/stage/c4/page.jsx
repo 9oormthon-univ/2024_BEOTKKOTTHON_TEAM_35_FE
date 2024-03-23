@@ -46,7 +46,7 @@ export default function QuizStageContent() {
           </div>
         </div>
         <div className="w-full mt-[99px] px-4 text-[22px] font-bold">
-          {title}
+          금융 지표
         </div>
         <div className="w-full mt-[17px] px-4 text-[16px]">
           한 개의 스테이지를 완료할 때마다 포인트를 뽑을 수 있어요{" "}

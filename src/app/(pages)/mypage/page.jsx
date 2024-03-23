@@ -1,6 +1,5 @@
 import BottomNav from "@/app/_components/bottom_nav";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function MyPage() {
     const userName = "돈버니";
@@ -19,7 +18,7 @@ export default function MyPage() {
                     </div>
                     
                     
-                    <Link href="./mypage/account" class="flex mt-3 items-center">
+                    <a href="./mypage/account" class="flex mt-3 items-center">
                         <p class="text-[#72787F] text-xs">donbunny@bunny.com</p>
                         <Image
                             src="/assets/images/b/mypage/images/right_arrow.svg"
@@ -28,7 +27,7 @@ export default function MyPage() {
                             class="ml-[6px]"
                             alt="arrow"
                         />
-                    </Link>
+                    </a>
 
 
                     <div class="flex justify-between items-center h-[56px] mt-[37px] pl-[19px] pr-4 border border-[#ECF3FF] rounded-xl">
@@ -41,7 +40,7 @@ export default function MyPage() {
                     </div>
 
 
-                    <Link href="./mypage/point" class="flex justify-between items-center h-[56px] mt-3 px-4 border border-[#ECF3FF] rounded-xl">
+                    <a href="./mypage/point" class="flex justify-between items-center h-[56px] mt-3 px-4 border border-[#ECF3FF] rounded-xl">
                         <p class="font-medium text-[#020D19]">포인트 교환소</p>
 
                         <Image
@@ -50,7 +49,7 @@ export default function MyPage() {
                             height={16}
                             alt="arrow"
                         />
-                    </Link>
+                    </a>
 
                     <div class="flex justify-between h-[43px] mt-4 items-center">
                         <p class="text-[#454C53]">푸쉬 알림 설정</p>
@@ -77,12 +76,12 @@ export default function MyPage() {
                 
                 <div class="flex flex-col w-full px-4 mb-[50px]">
 
-                    <Link href="./mypage/terms">
+                    <a href="./mypage/terms">
                         <p class="mt-[28px] text-[#020D19] font-medium">이용약관</p>
-                    </Link>
-                    <Link href="./mypage/account">
+                    </a>
+                    <a href="./mypage/account">
                         <p class="mt-[28px] text-[#020D19] font-medium">계정관리</p>
-                    </Link>
+                    </a>
                     <p class="mt-[22px] text-[#020D19] font-medium">고객센터</p>
                     <p class="mt-[22px] text-[#020D19] font-medium">1:1 문의</p>
                 </div>

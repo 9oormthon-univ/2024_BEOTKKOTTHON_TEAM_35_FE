@@ -12,8 +12,6 @@ const ReviewTabContent = () => {
   const [answer, setAnswer] = useState(false); // 정답인지 아닌지 판별하는 변수
   const [last, setLast] = useRecoilState(answerStep);
 
-  console.log("last", last);
-
   // 3개 중 하나만 선택 가능
   const [selectedValue, setSelectedValue] = useState(null);
   const handleClick = (value) => {

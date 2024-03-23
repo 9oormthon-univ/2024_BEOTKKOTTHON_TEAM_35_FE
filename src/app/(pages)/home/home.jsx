@@ -83,7 +83,7 @@ export default function Tab1() {
             </span>
           </div>
 
-          <div className="cursor-pointer mt-[15px] w-full flex flex-col h-[235px] p-[12px] bg-[#FFF] rounded-xl border border-[#ECF3FF]">
+          <div className="cursor-pointer mt-[15px] w-full flex flex-col p-[12px] bg-[#FFF] rounded-xl border border-[#ECF3FF]">
             {todayQuizz ? (
               <div className="w-full h-[235px]">
                 <div className="mt-[5px] text-[#020D19] text-[16px]">

@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 
 export default function Account() {
@@ -199,9 +198,9 @@ export default function Account() {
 
                                     {
                                         clicked == 1 ?
-                                            <Link href="/quiz" class="flex justify-center items-center w-full h-[44px] border border-[#4E60FF] rounded-lg bg-[#4E60FF]">
+                                            <a href="/quiz" class="flex justify-center items-center w-full h-[44px] border border-[#4E60FF] rounded-lg bg-[#4E60FF]">
                                                 <p class="text-sm text-[#ffffff] font-semibold">퀴즈 풀기</p>
-                                            </Link> :
+                                            </a> :
                                             clicked == 2 ?
                                                 <div onClick={() => {
                                                 }} class="flex justify-center items-center w-full h-[44px] border border-[#4E60FF] rounded-lg bg-[#4E60FF]">

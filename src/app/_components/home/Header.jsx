@@ -1,6 +1,5 @@
 import localFont from 'next/font/local'
 
-import Link from 'next/link';
 import Image from 'next/image';
 
 const JalnanFont = localFont({
@@ -26,16 +25,16 @@ export default function Header() {
               </div>
 
               <div class="flex items-center mt-3 gap-x-[15px]">
-                <Link href="/home/bookmark">
+                <a href="/home/bookmark">
                   <Image
                     src="/assets/images/b/home/images/bookmark_off.svg"
                     width={20}
                     height={20}
                     alt="bookmark"
                   />
-                </Link>
+                </a>
                 
-                <Link href="/home/notification">
+                <a href="/home/notification">
                 <Image
                   src="/assets/images/b/home/images/alarm.svg"
                   width={20}
@@ -43,7 +42,7 @@ export default function Header() {
                   alt="Alarm"
                 />
 
-                </Link>
+                </a>
               </div>
             </div>
 

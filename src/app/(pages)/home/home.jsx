@@ -19,7 +19,18 @@ export default function Tab1() {
   const [firstModalOpen, setFirstModalOpen] = useState(false);
   const [todayQuizz, setTodayQuizz] = useRecoilState(doingTodayQuiz);
 
-  console.log("t", todayQuizz);
+  const question = [
+    {
+      id: 0,
+      question:
+        "금융 거래에서 재무 상태를 추적하고 기록하는 과정은 무엇인가요?",
+      correctAnswer: "회계",
+      wrongAnswer1: "신용 경색",
+      wrongAnswer2: "무역",
+      category: "카테고리",
+      answerStatus: "false",
+    },
+  ];
 
   const close2 = () => {
     setQuizModalOpen(false);
@@ -49,18 +60,6 @@ export default function Tab1() {
       setSelectedValue(value);
     }
   };
-
-  const question = [
-    {
-      id: 0,
-      question: "현재 우리나라 기준금리는 얼마일까?",
-      correctAnswer: "연 3.25%",
-      wrongAnswer1: "연 3.0%",
-      wrongAnswer2: "연 3.5%",
-      category: "카테고리",
-      answerStatus: "false",
-    },
-  ];
 
   const clickOK = () => {
     setLast(true);

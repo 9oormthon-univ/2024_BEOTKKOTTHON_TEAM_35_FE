@@ -32,6 +32,7 @@ export default function QuizStageContent() {
       .catch((error) => {
         console.error(error);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

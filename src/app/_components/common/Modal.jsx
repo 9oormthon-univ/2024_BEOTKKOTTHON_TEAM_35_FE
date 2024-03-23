@@ -46,23 +46,6 @@ const Modal = ({ home, title, close, confirm }) => {
     close && close();
   };
 
-  const contents = [
-    {
-      num: 1,
-      question: "현재 우리나라 기준금리는 얼마일까?",
-      wrongAnswer1: "3%",
-      wrongAnswer2: "2%",
-      correctAnswer: "1.5%",
-    },
-    {
-      num: 2,
-      question: "어느 기업이 대한민국의 대표적인 IT 기업인가요?",
-      wrongAnswer1: "LG전자",
-      wrongAnswer2: "SK하이닉스",
-      correctAnswer: "삼성전자",
-    },
-  ];
-
   return (
     <div className="fixed top-0 left-0 right-0 bottom-0 z-50 flex items-center justify-center">
       <div className="fixed top-0 left-0 right-0 bottom-0 bg-black opacity-40"></div>

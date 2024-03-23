@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useRecoilState } from "recoil";
 import { userID } from "@/app/_state/user";
+import { tk } from "@/app/_state/token";
 
 import InputBox from "@/app/_components/common/InputBox";
 import Button from "@/app/_components/common/Button";
@@ -20,6 +21,7 @@ export default function Login() {
   const [autoLogin, setAutoLogin] = useState(false);
   const [noID, setNoID] = useState(false);
   const [userId, setUserId] = useRecoilState(userID);
+  const [token, setToken] = useRecoilState(tk);
 
   const validateId = (id) => {
     // 이메일 정규식 확인
@@ -50,7 +52,8 @@ export default function Login() {
           password: password,
         })
         .then((response) => {
-          localStorage.setItem("token", response.data.token);
+          setToken(response.data.token);
+          // localStorage.setItem("token", response.data.token);
           setUserId(response.data.userId);
           router.push("/home");
         })

@@ -10,12 +10,14 @@ import { stage1_c1, stage2_c1, stage3_c1 } from "@/app/_state/category1";
 import { stage1_c2, stage2_c2, stage3_c2 } from "@/app/_state/category2";
 import { stage1_c3, stage2_c3, stage3_c3 } from "@/app/_state/category3";
 import { stage1_c4, stage2_c4, stage3_c4 } from "@/app/_state/category4";
+import { tk } from "@/app/_state/token";
 
 import StageBox from "@/app/_components/quiz/StageBox";
 import LockStageBox from "@/app/_components/quiz/LockStageBox";
 
 export default function QuizStage() {
-  const token = localStorage.getItem("token");
+  // const token = localStorage.getItem("token");
+  const [token, setToken] = useRecoilState(tk);
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
@@ -76,6 +78,7 @@ function QuizStageContent({ token }) {
       .catch((error) => {
         console.error(error);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token, modifiedTitle]);
 
   console.log("slice", slicedData);

@@ -84,6 +84,7 @@ export default function QuizID() {
               questions={questions}
               next={handleNextQuiz}
               open={open}
+              c={2}
             />
           </div>
         </div>

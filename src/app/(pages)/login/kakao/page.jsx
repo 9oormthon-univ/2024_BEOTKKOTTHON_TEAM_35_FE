@@ -62,6 +62,7 @@ function KakaoCallback() {
     if (kakaoAuthCode) {
       handleGetToken();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [kakaoAuthCode]);
 
   return <div>Loading</div>;

@@ -58,6 +58,7 @@ export default function SignUp3() {
         console.error(err);
         // handle error
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [name]);
 
   return (

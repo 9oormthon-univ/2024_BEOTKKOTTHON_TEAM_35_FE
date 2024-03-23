@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
@@ -13,8 +14,8 @@ export default function SignUp() {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
-
   const [showInvalidIdMessage, setShowInvalidIdMessage] = useState(false);
+  const router = useRouter();
 
   const validateId = (id) => {
     const emailPattern =
@@ -32,6 +33,11 @@ export default function SignUp() {
     if (validateId(id) && validatePassword(password)) {
       console.log("ID:", id);
       console.log("Password:", password);
+      router.push(
+        `/signup3?id=${encodeURIComponent(id)}&password=${encodeURIComponent(
+          password
+        )}&password2=${encodeURIComponent(password2)}`
+      );
     } else {
       console.error("아이디/비밀번호가 일치하지 않습니다.");
     }
@@ -117,10 +123,10 @@ export default function SignUp() {
           </div>
         </div>
         <div className="w-full px-4 mb-[34px]">
-          {validateId(id) && validatePassword(password) ? (
-            <Link href="/signup3">
-              <Button text="다음" />
-            </Link>
+          {validateId(id) &&
+          validatePassword(password) &&
+          password == password2 ? (
+            <Button text="다음" onClick={handleLogin} />
           ) : (
             <DisabledButton text="다음" />
           )}

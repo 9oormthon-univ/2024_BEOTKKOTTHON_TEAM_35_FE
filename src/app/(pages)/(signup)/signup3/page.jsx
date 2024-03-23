@@ -1,8 +1,12 @@
 "use client";
 
+import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useState, useCallback } from "react";
+import { useRecoilState } from "recoil";
+// atom 추가
 
 import Button from "@/app/_components/common/Button";
 import DisabledButton from "@/app/_components/common/DisabledButton";
@@ -11,11 +15,49 @@ import InputBox from "@/app/_components/common/InputBox";
 
 export default function SignUp3() {
   const [name, setName] = useState("");
+  const router = useRouter();
 
   const validateName = (name) => {
     const koreanRegex = /^[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]*$/;
     return koreanRegex.test(name) && name.length > 1;
   };
+
+  const params = useSearchParams();
+  const id = params.get("id");
+  const password1 = params.get("password");
+  const password2 = params.get("password2");
+
+  const onSubmit = useCallback(() => {
+    axios
+      .post(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/users/register`,
+        {
+          nickname: name,
+          email: id,
+          password1: password1,
+          password2: password2,
+          point: 0,
+          flagNotification: true,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then((res) => {
+        localStorage.removeItem("key");
+        localStorage.setItem("key", token);
+        if (window.Android) {
+          window.Android.showToastMessage(name + "님, 환영합니다!");
+        }
+        router.push("/signup4");
+      })
+      .catch((err) => {
+        console.error(err);
+        // handle error
+      });
+  }, [name]);
 
   return (
     <div className="flex flex-col content-center items-center w-full h-full">
@@ -55,9 +97,7 @@ export default function SignUp3() {
         </div>
         <div className="w-full px-4 mb-[34px]">
           {validateName(name) ? (
-            <Link href="/signup4">
-              <Button text="확인" />
-            </Link>
+            <Button text="확인" onClick={onSubmit} />
           ) : (
             <DisabledButton text="확인" />
           )}

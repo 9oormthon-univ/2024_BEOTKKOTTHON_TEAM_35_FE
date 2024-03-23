@@ -49,7 +49,7 @@ const QuizCard = ({ index, questions, next, open }) => {
   };
 
   return (
-    <div className="w-full max-w-[500px] flex flex-col">
+    <div className="cursor-pointer w-full max-w-[500px] flex flex-col">
       <div className="bg-[#4E60FF] px-4">
         <div className="mb-[5px] text-[#FCFCFF] text-[22px] font-bold">Q.</div>
         <div className="mb-[28px] text-[18px] text-[#FCFCFF] font-bold">
@@ -107,9 +107,9 @@ const QuizCard = ({ index, questions, next, open }) => {
           <div className=" w-full max-w-[500px] mb-[50px]">
             {index == 9 ? (
               // <Button text="완료" onClick={open} />
-              <Link href="/quiz/stage/recommend">
+              <a href="/quiz/stage/recommend">
                 <Button text="완료" />
-              </Link>
+              </a>
             ) : showNextButton ? (
               <Button text="다음 문제" onClick={handleNextQuestion} />
             ) : selectedValue ? (

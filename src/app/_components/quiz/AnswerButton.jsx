@@ -3,7 +3,7 @@ import Image from "next/image";
 const AnswerButton = ({ value, text, onClick, answer }) => {
   return (
     <div
-      className={`flex w-full "h-[36px]"
+      className={`cursor-pointer flex w-full "h-[36px]"
       } justify-between items-center px-[15px] py-[9px] rounded-lg ${
         value ? "bg-[#ECF3FF] border border-[#4E60FF]" : "bg-[#F7F8F9]"
       }`}

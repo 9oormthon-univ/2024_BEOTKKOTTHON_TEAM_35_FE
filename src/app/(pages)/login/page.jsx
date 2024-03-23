@@ -48,14 +48,14 @@ export default function Login() {
     <div className="flex flex-col content-center items-center w-full h-full">
       <div className="flex flex-col content-center items-center w-full max-w-[500px] h-screen bg-[#FCFCFF]">
         <div className="top-0 mt-[28px] flex flex-col w-full justify-center items-start h-[36px] px-4">
-          <Link href="/first">
+          <a href="/first">
             <Image
               src="/assets/icons/back-arrow.svg"
               width={24}
               height={24}
               alt="logo"
             />
-          </Link>
+          </a>
         </div>
         <div className="w-full mt-[26px] mb-[37px] px-4 text-[22px] font-bold">
           로그인
@@ -108,9 +108,9 @@ export default function Login() {
           </div>
           <div className="w-full">
             {validateId(id) && validatePassword(password) ? (
-              <Link href="/home">
+              <a href="/home">
                 <Button text="로그인" onClick={handleLogin} />
-              </Link>
+              </a>
             ) : (
               <DisabledButton text="로그인" />
             )}
@@ -119,9 +119,9 @@ export default function Login() {
                 <div>아이디 찾기</div>
                 <div>비밀번호 찾기</div>
               </div>
-              <Link href="/signup">
+              <a href="/signup">
                 <div className="text-[#26282B]">회원가입</div>
-              </Link>
+              </a>
             </div>
           </div>
           <div className="relative w-full mt-[70px] h-px bg-[#C9CDD2] mb-[40px]">

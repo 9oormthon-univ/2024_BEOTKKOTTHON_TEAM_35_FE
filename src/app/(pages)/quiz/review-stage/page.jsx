@@ -31,14 +31,14 @@ function QuizReviewStageContent() {
       <div className="flex flex-col content-center items-center w-full max-w-[500px] h-screen bg-[#FCFCFF]">
         <div className="fixed w-full bg-[#FCFCFF]">
           <div className="mt-[6px] flex w-full justify-between items-center h-[36px] px-4">
-            <Link href="/quiz">
+            <a href="/quiz">
               <Image
                 src="/assets/icons/back-arrow.svg"
                 width={20}
                 height={20}
                 alt="back"
               />
-            </Link>
+            </a>
             <div className="text-[16px] text-[#000]">복습하기</div>
             <div className="size-[20px]" />
           </div>

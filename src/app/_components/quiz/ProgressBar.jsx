@@ -4,7 +4,7 @@ const ProgressBar = ({ num }) => {
   return (
     <div
       style={{ width: `100%` }}
-      className="relative h-[5px] rounded-xl bg-[#2528AE]"
+      className="cursor-pointer relative h-[5px] rounded-xl bg-[#2528AE]"
     >
       <div
         style={{ width: `${progress}%` }}

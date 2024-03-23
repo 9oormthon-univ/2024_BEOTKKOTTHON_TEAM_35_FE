@@ -6,7 +6,6 @@ export default function Home() {
   return (
     <div class="flex flex-col items-center">
       <div class="w-full max-w-[500px] pb-14">
-        
         <Header />
 
         {/* <TabsComponent items={items}/> */}
@@ -15,9 +14,6 @@ export default function Home() {
 
         <BottomNav />
       </div>
-
-      
     </div>
-
   );
 }

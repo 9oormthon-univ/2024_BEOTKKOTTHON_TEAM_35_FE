@@ -21,14 +21,14 @@ const AgreeButton = ({ num, text, agree, onClick, next }) => {
         <div className="ml-[12px] text-xs">{text}</div>
       </div>
       {next && (
-        <Link href={`/agree${num}`}>
+        <a href={`/agree${num}`}>
           <Image
             src="/assets/icons/next-arrow.svg"
             width={12}
             height={12}
             alt="next"
           />
-        </Link>
+        </a>
       )}
     </div>
   );

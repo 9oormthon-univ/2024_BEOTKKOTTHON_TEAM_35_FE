@@ -22,7 +22,7 @@ const WrongAnswerButton = ({
     <div
       className={`flex w-full shadow-[0_2px_15px_0px_rgba(0,0,0,0.03)] ${
         real ? "h-[54px]" : "h-[36px]"
-      } justify-between items-center px-[15px] py-[9px] rounded-lg ${
+      } cursor-pointer justify-between items-center px-[15px] py-[9px] rounded-lg ${
         value && status == "wrong1"
           ? "bg-[#FFF0F0] border border-[#FF475D]"
           : value

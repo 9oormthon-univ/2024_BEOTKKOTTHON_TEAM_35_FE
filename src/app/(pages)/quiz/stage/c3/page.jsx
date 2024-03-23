@@ -3,37 +3,30 @@
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
-import { Suspense, useEffect, useState } from "react"; // Suspense 추가
-import { useSearchParams } from "next/navigation";
-import { useRecoilState } from "recoil";
-import { stage1_c3, stage2_c3, stage3_c3 } from "@/app/_state/category3";
 
 import StageBox from "@/app/_components/quiz/StageBox";
 import LockStageBox from "@/app/_components/quiz/LockStageBox";
 
 export default function QuizStageContent() {
   const title = "금융 상품";
-  const [data31, setData31] = useRecoilState(stage1_c3);
-  const [data32, setData32] = useRecoilState(stage2_c3);
-  const [data33, setData33] = useRecoilState(stage3_c3);
 
-  useEffect(() => {
-    axios
-      .get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/quizzes?category=${title}`)
-      .then((response) => {
-        const slicedData = [];
-        for (let i = 0; i < response.data.length; i += 10) {
-          slicedData.push(response.data.slice(i, i + 10));
-        }
-        setData31(slicedData[0] || []);
-        setData32(slicedData[1] || []);
-        setData33(slicedData[2] || []);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/quizzes?category=${title}`)
+  //     .then((response) => {
+  //       const slicedData = [];
+  //       for (let i = 0; i < response.data.length; i += 10) {
+  //         slicedData.push(response.data.slice(i, i + 10));
+  //       }
+  //       setData31(slicedData[0] || []);
+  //       setData32(slicedData[1] || []);
+  //       setData33(slicedData[2] || []);
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //     });
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
 
   return (
     <div className="flex flex-col content-center items-center w-full h-full">

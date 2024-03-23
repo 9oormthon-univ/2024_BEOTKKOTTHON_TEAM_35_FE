@@ -4,15 +4,18 @@ import { useRouter } from "next/navigation";
 import { useRecoilState } from "recoil";
 import { currentQuizProgress } from "@/app/_state/quiz-progress";
 import { quizModal } from "@/app/_state/quiz-modal-open";
+import { homeModal } from "@/app/_state/home-modal-open";
 
 import Link from "next/link";
 import Image from "next/image";
 
-const Modal = ({ title, close, confirm }) => {
+const Modal = ({ home, title, close, confirm }) => {
   const router = useRouter();
   const [index, setIndex] = useState(0);
   const [quizProgress, setQuizProgress] = useRecoilState(currentQuizProgress);
-  const [quizModalOpen, setQuizModalOpen] = useRecoilState(quizModal);
+  const [quizModalOpen, setQuizModalOpen] = useRecoilState(
+    home ? homeModal : quizModal
+  );
 
   const handleNext = () => {
     setIndex((prevIndex) => prevIndex + 1); // 이전 퀴즈 인덱스로 업데이트
@@ -22,7 +25,8 @@ const Modal = ({ title, close, confirm }) => {
     setQuizProgress(0);
     setQuizModalOpen(false);
     router.push("/quiz");
-    close;
+    confirm && confirm();
+    close && close();
   };
   const goToMyPage = () => {
     setQuizProgress(0);
@@ -90,7 +94,7 @@ const Modal = ({ title, close, confirm }) => {
                     className="flex justify-center items-center w-full h-[44px] px-[16px] rounded-lg border border-[#4E60FF] text-[#4E60FF] text-[14px] font-semibold"
                     onClick={goToHome}
                   >
-                    퀴즈 홈으로
+                    {home ? "홈으로" : "퀴즈 홈으로"}
                   </button>
                 </div>
                 <div className="w-full">

@@ -20,8 +20,6 @@ const InputBox = ({
     setValue("");
   };
 
-  console.log("Vv", validate);
-
   return (
     <div className="w-full relative">
       <input

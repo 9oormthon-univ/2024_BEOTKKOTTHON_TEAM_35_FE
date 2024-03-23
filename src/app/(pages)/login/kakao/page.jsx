@@ -4,7 +4,10 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
+import { Suspense } from "react"; // Suspense import 추가
 
+
+  export default function KakaoLogin() {
 
 const KakaoCallback = () => {
   const router = useRouter();
@@ -27,8 +30,8 @@ const KakaoCallback = () => {
   const handleGetToken = async () => {
 
     var check = 0;
-    
-  axios
+
+    axios
       .post(`https://kauth.kakao.com/oauth/token`, null, {
         headers: { "Content-Type": "application/x-www-form-urlencoded;charset=utf-8" },
         params: {
@@ -49,7 +52,7 @@ const KakaoCallback = () => {
           console.log(check)
           console.log(response);
 
-           axios
+          axios
             .post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/users/register`, {
               nickname: response.data.kakao_account.profile.nickname,
               email: "",
@@ -75,24 +78,41 @@ const KakaoCallback = () => {
       });
   };
 
-  
+
   useEffect(() => {
     if (kakaoAuthCode) {
       handleGetToken();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return     <div className="flex flex-col content-center items-center w-full h-full">
-  <div className="flex flex-col justify-center content-center items-center w-full max-w-[500px] h-screen bg-[#FCFCFF]">
+    return <Suspense fallback={<div className="flex flex-col content-center items-center w-full h-full">
+      <div className="flex flex-col justify-center content-center items-center w-full max-w-[500px] h-screen bg-[#FCFCFF]">
 
-  <div className="flex flex-row mx-auto h-[50vh] md:h-[60vh] justify-center items-center">
-                                    <div className="w-40 h-40 rounded-full animate-spin 
+        <div className="flex flex-row mx-auto h-[50vh] md:h-[60vh] justify-center items-center">
+          <div className="w-40 h-40 rounded-full animate-spin 
                                     border-2 border-solid border-blue-500 border-t-transparent"></div>
-                                </div>
+        </div>
+
+      </div>
+
+    </div>}>
+      <Loading />
+    </Suspense>;
+  };
+  }
+
+function Loading() {
+  return <div className="flex flex-col content-center items-center w-full h-full">
+    <div className="flex flex-col justify-center content-center items-center w-full max-w-[500px] h-screen bg-[#FCFCFF]">
+
+      <div className="flex flex-row mx-auto h-[50vh] md:h-[60vh] justify-center items-center">
+        <div className="w-40 h-40 rounded-full animate-spin 
+                                    border-2 border-solid border-blue-500 border-t-transparent"></div>
+      </div>
 
     </div>
 
-  </div>;
-};
-
-export default KakaoCallback;
+  </div>
+}
+  

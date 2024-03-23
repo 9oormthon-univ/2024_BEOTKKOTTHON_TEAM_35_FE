@@ -8,7 +8,7 @@ import StageBox from "@/app/_components/quiz/StageBox";
 import LockStageBox from "@/app/_components/quiz/LockStageBox";
 
 export default function QuizStageContent() {
-  const title = "금융 상품";
+  const title = "금융 지표";
 
   // useEffect(() => {
   //   axios
